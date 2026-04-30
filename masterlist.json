@@ -1,0 +1,2560 @@
+{
+  "settings": {
+    "quiz_title": "Quiz of Enlightenment",
+    "anomalies": [
+  { "name": "Raging Bolt", "pools": ["Johto"], "flavor": "A thunderous echo of a prehistoric storm." },
+  { "name": "Gouging Fire", "pools": ["Johto"], "flavor": "A blazing behemoth from a forgotten era." },
+  { "name": "Walking Wake", "pools": ["Kanto"], "flavor": "A primal predator that walks upon the waves." },
+  { "name": "Iron Crown", "pools": ["Kanto"], "flavor": "A cold, calculated presence from the future." },
+  { "name": "Roaring Moon", "pools": ["Hoenn"], "flavor": "A terrifying silhouette of ancient ferocity." },
+  { "name": "Iron Valiant", "pools": ["Hoenn"], "flavor": "A fusion of logic and heart from a time yet to come." },
+  { "name": "Celesteela", "pools": ["Sinnoh"], "flavor": "A metallic giant ascending to the heavens." },
+  { "name": "Kartana", "pools": ["Sinnoh"], "flavor": "A paper-thin edge that can sever the sky." },
+  { "name": "Iron Leaves", "pools": ["Unova"], "flavor": "A synthetic blade cutting through time." },
+  { "name": "Iron Boulder", "pools": ["Unova"], "flavor": "A futuristic monolith of psychic power." },
+  { "name": "Poipole", "pools": ["Kalos"], "flavor": "A curious wanderer from the Ultra Metropolis." },
+  { "name": "Guzzlord", "pools": ["Kalos"], "flavor": "An insatiable void that consumes all." },
+  { "name": "Buzzwole", "pools": ["Alola"], "flavor": "A burst of alien strength." },
+  { "name": "Pheromosa", "pools": ["Alola"], "flavor": "A graceful blur of speed from another world." },
+  { "name": "Stakataka", "pools": ["Galar"], "flavor": "A fortress of many eyes." },
+  { "name": "Blacephalon", "pools": ["Galar"], "flavor": "A startling explosion of spectral color." },
+  { "name": "Xurkitree", "pools": ["Paldea"], "flavor": "An erratic pulse of extra-dimensional energy." },
+  { "name": "Nihilego", "pools": ["Paldea"], "flavor": "A glass-like entity with a haunting aura." }
+    ]
+  },
+  "pokemon_entries":[
+    {
+    "name": "Bulbasaur",
+    "nature": "Docile",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Charmander",
+    "nature": "Brave",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Squirtle",
+    "nature": "Quirky",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Caterpie",
+    "nature": "Timid",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Weedle",
+    "nature": "Naughty",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Pidgey",
+    "nature": "Bold",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Rattata",
+    "nature": "Hardy",
+   "region": "Kanto",
+    "evolution_line": ["Rattata", "Raticate"],
+    "variant_data": {"regional": ["Alolan Rattata"], "paradox": null}
+  },
+  {
+    "name": "Spearow",
+    "nature": "Sassy",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Ekans",
+    "nature": "Quiet",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Pichu",
+    "nature": "Hasty",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Pichu"], "paradox": null}
+  },
+  {
+    "name": "Sandshrew",
+    "nature": "Hardy",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Sandshrew], "paradox": null}
+  },
+  {
+    "name": "Nidoran-F",
+    "nature": "Calm",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Nidoran-M",
+    "nature": "Rash",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Cleffa",
+    "nature": "Bashful",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Vulpix",
+    "nature": "Relaxed",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Vulpix"], "paradox": null}
+  },
+  {
+    "name": "Igglybuff",
+    "nature": "Naive",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": ["Scream Tail"]}
+  },
+  {
+    "name": "Zubat",
+    "nature": "Impish",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Oddish",
+    "nature": "Quirky",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Paras",
+    "nature": "Serious",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Venonat",
+    "nature": "Mild",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Diglett",
+    "nature": "Jolly",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Diglett"], "paradox": null}
+  },
+  {
+    "name": "Meowth",
+    "nature": "Sassy",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Meowth", "Galarian Meowth"], "paradox": null}
+  },
+  {
+    "name": "Psyduck",
+    "nature": "Careful",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Mankey",
+    "nature": "Naughty",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Growlithe",
+    "nature": "Adamant",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Hisuian Growlithe"], "paradox": null}
+  },
+  {
+    "name": "Poliwag",
+    "nature": "Gentle",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Abra",
+    "nature": "Lonely",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Machop",
+    "nature": "Brave",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Bellsprout",
+    "nature": "Quiet",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Tentacool",
+    "nature": "Calm",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Geodude",
+    "nature": "Careful",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Geodude"], "paradox": null}
+  },
+  {
+    "name": "Ponyta",
+    "nature": "Timid",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Galarian Ponyta"], "paradox": null}
+  },
+  {
+    "name": "Slowpoke",
+    "nature": "Lax",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Galarian Slowpoke"], "paradox": null}
+  },
+  {
+    "name": "Magnemite",
+    "nature": "Serious",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": ["Sandy Shocks"]}
+  },
+  {
+    "name": "Farfetch'd",
+    "nature": "Adamant",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Galarian Farfetch'd"], "paradox": null}
+  },
+  {
+    "name": "Doduo",
+    "nature": "Hasty",
+   "region": "Kanto",
+    "variant_data": {
+     "regional": null,
+      "paradox": null
+    }
+  },
+  {
+    "name": "Seel",
+    "nature": "Modest",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Grimer",
+    "nature": "Bold",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Grimer"], "paradox": null}
+  },
+  {
+    "name": "Shellder",
+    "nature": "Bashful",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Gastly",
+    "nature": "Impish",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Onix",
+    "nature": "Rash",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Voltorb",
+    "nature": "Hasty",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Hisuian Voltorb"], "paradox": null}
+  },
+  {
+    "name": "Exeggcute",
+    "nature": "Careful",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Exeggcute"], "paradox": null}
+  },
+  {
+    "name": "Cubone",
+    "nature": "Lonely",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Alolan Cubone"], "paradox": null}
+  },
+  {
+    "name": "Tyrogue",
+    "nature": "Brave",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Lickitung",
+    "nature": "Naughty",
+   "region": "Kanto",
+	"variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Koffing",
+    "nature": "Lax",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Galarian Koffing"], "paradox": null}
+  },
+  {
+    "name": "Rhyhorn",
+    "nature": "Gentle",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Happiny",
+    "nature": "Jolly",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Tangela",
+    "nature": "Relaxed",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Kangaskhan",
+    "nature": "Gentle",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Horsea",
+    "nature": "Naive",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Goldeen",
+    "nature": "Modest",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Staryu",
+    "nature": "Docile",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Mime Jr.",
+    "nature": "Bashful",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Galarian Mime Jr."], "paradox": null}
+  },
+  {
+    "name": "Scyther",
+    "nature": "Adamant",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Smoochum",
+    "nature": "Impish",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Elekid",
+    "nature": "Bold",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Magby",
+    "nature": "Sassy",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Pinsir",
+    "nature": "Mild",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Tauros",
+    "nature": "Rash",
+   "region": "Kanto",
+    "variant_data": {"regional": ["Paldean Tauros (Combat)", "Paldean Tauros (Blaze)", "Paldean Tauros (Aqua)"], "paradox": null}
+  },
+  {
+    "name": "Magikarp",
+    "nature": "Hardy",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Lapras",
+    "nature": "Docile",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Ditto",
+    "nature": "Quirky",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Eevee",
+    "nature": "Jolly",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Porygon",
+    "nature": "Serious",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Omanyte",
+    "nature": "Quiet",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Kabuto",
+    "nature": "Calm",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Aerodactyl",
+    "nature": "Lonely",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Munchlax",
+    "nature": "Lax",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Dratini",
+    "nature": "Timid",
+   "region": "Kanto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+[
+  {
+    "name": "Chikorita",
+    "nature": "Docile",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Cyndaquil",
+    "nature": "Timid",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Totodile",
+    "nature": "Jolly",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Sentret",
+    "nature": "Careful",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Hoothoot",
+    "nature": "Calm",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Ledyba",
+    "nature": "Quirky",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Spinarak",
+    "nature": "Quiet",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Chinchou",
+    "nature": "Modest",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Togepi",
+    "nature": "Gentle",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Natu",
+    "nature": "Serious",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Mareep",
+    "nature": "Mild",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Hoppip",
+    "nature": "Bashful",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Aipom",
+    "nature": "Hasty",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Sunkern",
+    "nature": "Jolly",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Yanma",
+    "nature": "Docile",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Wooper",
+    "nature": "Lax",
+   "region": "Johto",
+    "variant_data": {"regional": ["Paldean Wooper"], "paradox": null}
+  },
+  {
+    "name": "Murkrow",
+    "nature": "Naughty",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Misdreavus",
+    "nature": "Impish",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": ["Flutter Mane"]
+    }
+  },
+  {
+    "name": "Unown",
+    "nature": "Quirky",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Girafarig",
+    "nature": "Bold",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Pineco",
+    "nature": "Quiet",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Dunsparce",
+    "nature": "Mild",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Gligar",
+    "nature": "Naughty",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Snubbull",
+    "nature": "Rash",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Qwilfish",
+    "nature": "Rash",
+   "region": "Johto",
+    "variant_data": {"regional": ["Hisuian Qwilfish"], "paradox": null}
+  },
+  {
+    "name": "Shuckle",
+    "nature": "Hardy",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Heracross",
+    "nature": "Brave",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Sneasel",
+    "nature": "Sassy",
+   "region": "Johto",
+    "variant_data": {"regional": ["Hisuian Sneasel"], "paradox": null}
+  },
+  {
+    "name": "Teddiursa",
+    "nature": "Naive",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Slugma",
+    "nature": "Lax",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Swinub",
+    "nature": "Calm",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Corsola",
+    "nature": "Modest",
+   "region": "Johto",
+    "variant_data": {
+     "regional": ["Galarian Corsola"], "paradox": null}
+  },
+  {
+    "name": "Remoraid",
+    "nature": "Timid",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Delibird",
+    "nature": "Gentle",
+   "region": "Johto",
+    "variant_data": {
+     "regional": null, "paradox": ["Iron Bundle"]}
+  },
+  {
+    "name": "Skarmory",
+    "nature": "Adamant",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Houndour",
+    "nature": "Lonely",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Phanpy",
+    "nature": "Relaxed",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": ["Great Tusk", "Iron Treads"]}
+  },
+  {
+    "name": "Stantler",
+    "nature": "Brave",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Smeargle",
+    "nature": "Careful",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Miltank",
+    "nature": "Relaxed",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Larvitar",
+    "nature": "Lonely",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": ["Iron Thorns"]}
+  },
+  {
+    "name": "Azurill",
+    "nature": "Naive",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Wynaut",
+    "nature": "Bashful",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Bonsly",
+    "nature": "Hardy",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Mantyke",
+    "nature": "Bold",
+   "region": "Johto",
+    "variant_data": {"regional": null, "paradox": null}
+  }
+  {
+    "name": "Treecko",
+    "nature": "Sassy",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Torchic",
+    "nature": "Hasty",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Mudkip",
+    "nature": "Calm",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Poochyena",
+    "nature": "Naughty",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Zigzagoon",
+    "nature": "Rash",
+    "region": "Hoenn",
+    "variant_data": {"regional": ["Galarian Zigzagoon"], "paradox": null}
+  },
+  {
+    "name": "Wurmple",
+    "nature": "Mild",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Lotad",
+    "nature": "Docile",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Seedot",
+    "nature": "Brave",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Taillow",
+    "nature": "Sassy",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Wingull",
+    "nature": "Hasty",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Ralts",
+    "nature": "Gentle",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Surskit",
+    "nature": "Docile",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Shroomish",
+    "nature": "Mild",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Slakoth",
+    "nature": "Lax",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Nincada",
+    "nature": "Timid",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Whismur",
+    "nature": "Quiet",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Makuhita",
+    "nature": "Brave",
+    "region": "Hoenn",
+    "variant_data": {"regional": null, "paradox": ["Iron Hands"]}
+  },
+  {
+    "name": "Nosepass",
+    "nature": "Careful",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Skitty",
+    "nature": "Naive",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sableye",
+    "nature": "Impish",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Mawile",
+    "nature": "Impish",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Aron",
+    "nature": "Hardy",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Meditite",
+    "nature": "Serious",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Electrike",
+    "nature": "Bold",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Plusle",
+    "nature": "Jolly",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Minun",
+    "nature": "Bashful",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Volbeat",
+    "nature": "Modest",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Illumise",
+    "nature": "Sassy",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Gulpin",
+    "nature": "Relaxed",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Carvanha",
+    "nature": "Hardy",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Wailmer",
+    "nature": "Relaxed",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Numel",
+    "nature": "Lax",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Torkoal",
+    "nature": "Careful",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Spoink",
+    "nature": "Hasty",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Spinda",
+    "nature": "Quirky",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Trapinch",
+    "nature": "Serious",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cacnea",
+    "nature": "Rash",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Swablu",
+    "nature": "Naive",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Zangoose",
+    "nature": "Bold",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Seviper",
+    "nature": "Naughty",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Lunatone",
+    "nature": "Lonely",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Solrock",
+    "nature": "Adamant",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Barboach",
+    "nature": "Hardy",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Corphish",
+    "nature": "Adamant",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Baltoy",
+    "nature": "Quirky",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Lileep",
+    "nature": "Docile",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Anorith",
+    "nature": "Quiet",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Feebas",
+    "nature": "Modest",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Castform",
+    "nature": "Modest",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Kecleon",
+    "nature": "Quirky",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Shuppet",
+    "nature": "Naughty",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Duskull",
+    "nature": "Lonely",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tropius",
+    "nature": "Gentle",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Absol",
+    "nature": "Lonely",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Snorunt",
+    "nature": "Bashful",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Spheal",
+    "nature": "Jolly",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Clamperl",
+    "nature": "Mild",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Relicanth",
+    "nature": "Calm",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Luvdisc",
+    "nature": "Relaxed",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bagon",
+    "nature": "Adamant",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Beldum",
+    "nature": "Quiet",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Budew",
+    "nature": "Calm",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Chingling",
+    "nature": "Timid",
+    "region": "Hoenn",
+    "variant_data": { "regional": null, "paradox": null }
+  }
+  {
+    "name": "Turtwig",
+    "nature": "Bold",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Chimchar",
+    "nature": "Impish",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Piplup",
+    "nature": "Quirky",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Starly",
+    "nature": "Bold",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bidoof",
+    "nature": "Modest",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Kricketot",
+    "nature": "Timid",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Shinx",
+    "nature": "Hasty",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cranidos",
+    "nature": "Hardy",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Shieldon",
+    "nature": "Serious",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Burmy",
+    "nature": "Mild",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Combee",
+    "nature": "Careful",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pachirisu",
+    "nature": "Jolly",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Buizel",
+    "nature": "Brave",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cherubi",
+    "nature": "Bashful",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Shellos",
+    "nature": "Docile",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Drifloon",
+    "nature": "Lonely",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Buneary",
+    "nature": "Naive",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Glameow",
+    "nature": "Sassy",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Stunky",
+    "nature": "Lax",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bronzor",
+    "nature": "Calm",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Chatot",
+    "nature": "Adamant",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Spiritomb",
+    "nature": "Naughty",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Gible",
+    "nature": "Brave",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Riolu",
+    "nature": "Sassy",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Hippopotas",
+    "nature": "Quiet",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Skorupi",
+    "nature": "Rash",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Croagunk",
+    "nature": "Naughty",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Carnivine",
+    "nature": "Impish",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Finneon",
+    "nature": "Gentle",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Snover",
+    "nature": "Relaxed",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Rotom",
+    "nature": "Hasty",
+    "region": "Sinnoh",
+    "variant_data": { "regional": null, "paradox": null }
+  }
+  {
+    "name": "Snivy",
+    "nature": "Sassy",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tepig",
+    "nature": "Relaxed",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Oshawott",
+    "nature": "Brave",
+    "region": "Unova",
+    "variant_data": {"regional": ["Hisuian Samurott"], "paradox": null}
+  },
+  {
+    "name": "Patrat",
+    "nature": "Careful",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Lillipup",
+    "nature": "Jolly",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Purrloin",
+    "nature": "Sassy",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pansage",
+    "nature": "Mild",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pansear",
+    "nature": "Rash",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Panpour",
+    "nature": "Modest",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Munna",
+    "nature": "Gentle",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pidove",
+    "nature": "Timid",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Blitzle",
+    "nature": "Hasty",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Roggenrola",
+    "nature": "Hardy",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Woobat",
+    "nature": "Bashful",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Drilbur",
+    "nature": "Adamant",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Audino",
+    "nature": "Gentle",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Timburr",
+    "nature": "Brave",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tympole",
+    "nature": "Quirky",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Throh",
+    "nature": "Adamant",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sawk",
+    "nature": "Serious",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sewaddle",
+    "nature": "Calm",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Venipede",
+    "nature": "Naughty",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cottonee",
+    "nature": "Quiet",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Petilil",
+    "nature": "Lax",
+    "region": "Unova",
+    "variant_data": {"regional": ["Hisuian Petilil"], "paradox": null}
+  },
+  {
+    "name": "Basculin",
+    "nature": "Bold",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sandile",
+    "nature": "Naughty",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Darumaka",
+    "nature": "Docile",
+    "region": "Unova",
+    "variant_data": {"regional": ["Galarian Darumaka"], "paradox": null}
+  },
+  {
+    "name": "Maractus",
+    "nature": "Relaxed",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dwebble",
+    "nature": "Hardy",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Scraggy",
+    "nature": "Bold",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sigilyph",
+    "nature": "Quirky",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Yamask",
+    "nature": "Lonely",
+    "region": "Unova",
+    "variant_data": {"regional": ["Galarian Yamask"], "paradox": null}
+  },
+  {
+    "name": "Tirtouga",
+    "nature": "Calm",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Archen",
+    "nature": "Rash",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Trubbish",
+    "nature": "Lonely",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Zorua",
+    "nature": "Impish",
+    "region": "Unova",
+    "variant_data": {"regional": ["Hisuian Zorua"], "paradox": null}
+  },
+  {
+    "name": "Minccino",
+    "nature": "Quiet",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Gothita",
+    "nature": "Impish",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Solosis",
+    "nature": "Quiet",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Ducklett",
+    "nature": "Naive",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Vanillite",
+    "nature": "Docile",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Deerling",
+    "nature": "Timid",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Emolga",
+    "nature": "Jolly",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Karrablast",
+    "nature": "Modest",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Foongus",
+    "nature": "Bashful",
+    "region": "Unova",
+    "variant_data": {"regional": null, "paradox": ["Brute Bonnet"]}
+  },
+  {
+    "name": "Frillish",
+    "nature": "Mild",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Alomomola",
+    "nature": "Calm",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Joltik",
+    "nature": "Timid",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Ferroseed",
+    "nature": "Careful",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Klink",
+    "nature": "Serious",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tynamo",
+    "nature": "Docile",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Elgyem",
+    "nature": "Quirky",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Litwick",
+    "nature": "Lonely",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Axew",
+    "nature": "Brave",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cubchoo",
+    "nature": "Naive",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cryogonal",
+    "nature": "Bold",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Shelmet",
+    "nature": "Adamant",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Stunfisk",
+    "nature": "Lax",
+    "region": "Unova",
+    "variant_data": {"regional": ["Galarian Stunfisk"], "paradox": null}
+  },
+  {
+    "name": "Mienfoo",
+    "nature": "Careful",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Druddigon",
+    "nature": "Hardy",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Golett",
+    "nature": "Relaxed",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pawniard",
+    "nature": "Serious",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bouffalant",
+    "nature": "Rash",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Rufflet",
+    "nature": "Hasty",
+    "region": "Unova",
+    "variant_data": {"regional": ["Hisuian Rufflet"], "paradox": null}
+  },
+  {
+    "name": "Vullaby",
+    "nature": "Naughty",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Heatmor",
+    "nature": "Lax",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Durant",
+    "nature": "Mild",
+    "region": "Unova",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Deino",
+    "nature": "Hasty",
+    "region": "Unova",
+    "variant_data": {"regional": null, "paradox": ["Iron Jugulis"]}
+  },
+  {
+    "name": "Larvesta",
+    "nature": "Sassy",
+    "region": "Unova",
+    "variant_data": {"regional": null, "paradox": ["Iron Moth", "Slither Wing"]}
+  }
+  {
+    "name": "Chespin",
+    "nature": "Brave",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Fennekin",
+    "nature": "Modest",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Froakie",
+    "nature": "Careful",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bunnelby",
+    "nature": "Mild",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Fletchling",
+    "nature": "Hasty",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Scatterbug",
+    "nature": "Bold",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Litleo",
+    "nature": "Brave",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Flabébé",
+    "nature": "Gentle",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Skiddo",
+    "nature": "Jolly",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pancham",
+    "nature": "Naughty",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Furfrou",
+    "nature": "Sassy",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Espurr",
+    "nature": "Quiet",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Honedge",
+    "nature": "Serious",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Spritzee",
+    "nature": "Sassy",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Swirlix",
+    "nature": "Quirky",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Inkay",
+    "nature": "Impish",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Binacle",
+    "nature": "Calm",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Skrelp",
+    "nature": "Relaxed",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Clauncher",
+    "nature": "Adamant",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Helioptile",
+    "nature": "Docile",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tyrunt",
+    "nature": "Rash",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Amaura",
+    "nature": "Lax",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Hawlucha",
+    "nature": "Adamant",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dedenne",
+    "nature": "Jolly",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Carbink",
+    "nature": "Hardy",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Goomy",
+    "nature": "Naive",
+    "region": "Kalos",
+    "variant_data": {"regional": ["Hisuian Goomy"], "paradox": null}
+  },
+  {
+    "name": "Klefki",
+    "nature": "Impish",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Phantump",
+    "nature": "Timid",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pumpkaboo",
+    "nature": "Bashful",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bergmite",
+    "nature": "Lonely",
+    "region": "Kalos",
+    "variant_data": {"regional": ["Hisuian Bergmite"], "paradox": null}
+  },
+  {
+    "name": "Noibat",
+    "nature": "Hasty",
+    "region": "Kalos",
+    "variant_data": { "regional": null, "paradox": null }
+  }
+  {
+    "name": "Rowlet",
+    "nature": "Docile",
+    "region": "Alola",
+    "variant_data": {"regional": ["Hisuian Rowlet"], "paradox": null}
+  },
+  {
+    "name": "Litten",
+    "nature": "Lonely",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Popplio",
+    "nature": "Modest",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pikipek",
+    "nature": "Hardy",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Yungoos",
+    "nature": "Serious",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Grubbin",
+    "nature": "Quiet",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Crabrawler",
+    "nature": "Hardy",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Oricorio",
+    "nature": "Bold",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cutiefly",
+    "nature": "Mild",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Rockruff",
+    "nature": "Rash",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Wishiwashi",
+    "nature": "Bashful",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Mareanie",
+    "nature": "Careful",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Mudbray",
+    "nature": "Adamant",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dewpider",
+    "nature": "Adamant",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Fomantis",
+    "nature": "Calm",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Morelull",
+    "nature": "Quiet",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Salandit",
+    "nature": "Sassy",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Stufful",
+    "nature": "Naive",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bounsweet",
+    "nature": "Naive",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Comfey",
+    "nature": "Gentle",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Oranguru",
+    "nature": "Calm",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Passimian",
+    "nature": "Hasty",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Wimpod",
+    "nature": "Timid",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sandygast",
+    "nature": "Relaxed",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pyukumuku",
+    "nature": "Impish",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Minior",
+    "nature": "Serious",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Komala",
+    "nature": "Lax",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Turtonator",
+    "nature": "Bold",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Togedemaru",
+    "nature": "Jolly",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Mimikyu",
+    "nature": "Lonely",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bruxish",
+    "nature": "Quirky",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Drampa",
+    "nature": "Gentle",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dhelmise",
+    "nature": "Naughty",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Jangmo-o",
+    "nature": "Brave",
+    "region": "Alola",
+    "variant_data": { "regional": null, "paradox": null }
+  }
+  {
+    "name": "Grookey",
+    "nature": "Relaxed",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Scorbunny",
+    "nature": "Hasty",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sobble",
+    "nature": "Lonely",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Skwovet",
+    "nature": "Hardy",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Rookidee",
+    "nature": "Serious",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Blipbug",
+    "nature": "Quiet",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Nickit",
+    "nature": "Naughty",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Gossifleur",
+    "nature": "Calm",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Wooloo",
+    "nature": "Docile",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Chewtle",
+    "nature": "Rash",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Yamper",
+    "nature": "Jolly",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Rolycoly",
+    "nature": "Quiet",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Applin",
+    "nature": "Mild",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Silicobra",
+    "nature": "Naive",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cramorant",
+    "nature": "Quirky",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Arrokuda",
+    "nature": "Adamant",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Toxel",
+    "nature": "Impish",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sizzlipede",
+    "nature": "Bold",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Clobbopus",
+    "nature": "Bold",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Sinistea",
+    "nature": "Lonely",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Hatenna",
+    "nature": "Sassy",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Impidimp",
+    "nature": "Impish",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Milcery",
+    "nature": "Gentle",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Falinks",
+    "nature": "Brave",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pincurchin",
+    "nature": "Bashful",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Snom",
+    "nature": "Timid",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Stonjourner",
+    "nature": "Lax",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Eiscue",
+    "nature": "Careful",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Indeedee",
+    "nature": "Modest",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Morpeko",
+    "nature": "Rash",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cufant",
+    "nature": "Gentle",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dracozolt",
+    "nature": "Jolly",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Arctozolt",
+    "nature": "Naive",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dracovish",
+    "nature": "Lax",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Arctovish",
+    "nature": "Relaxed",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Duraludon",
+    "nature": "Adamant",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dreepy",
+    "nature": "Mild",
+    "region": "Galar",
+    "variant_data": { "regional": null, "paradox": null }
+  }
+  {
+    "name": "Sprigatito",
+    "nature": "Impish",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Fuecoco",
+    "nature": "Jolly",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Quaxly",
+    "nature": "Quirky",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Lechonk",
+    "nature": "Mild",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tarountula",
+    "nature": "Lax",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Nymble",
+    "nature": "Brave",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Pawmi",
+    "nature": "Bold",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tandemaus",
+    "nature": "Gentle",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Fidough",
+    "nature": "Modest",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Smoliv",
+    "nature": "Timid",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Squawkabilly",
+    "nature": "Rash",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tadbulb",
+    "nature": "Bashful",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Wattrel",
+    "nature": "Calm",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Maschiff",
+    "nature": "Naive",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Shroodle",
+    "nature": "Docile",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bramblin",
+    "nature": "Docile",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Toedscool",
+    "nature": "Hasty",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Capsakid",
+    "nature": "Rash",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Klawf",
+    "nature": "Lax",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Nacli",
+    "nature": "Hardy",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Charcadet",
+    "nature": "Adamant",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Rellor",
+    "nature": "Careful",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Flittle",
+    "nature": "Bold",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tinkatink",
+    "nature": "Serious",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Wiglett",
+    "nature": "Timid",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Bombirdier",
+    "nature": "Impish",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Finizen",
+    "nature": "Brave",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Varoom",
+    "nature": "Serious",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cyclizar",
+    "nature": "Hasty",
+    "region": "Paldea",
+    "variant_data": {"regional": null, "paradox": null}
+  },
+  {
+    "name": "Orthworm",
+    "nature": "Bashful",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Glimmet",
+    "nature": "Sassy",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Greavard",
+    "nature": "Lonely",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Flamigo",
+    "nature": "Adamant",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Cetoddle",
+    "nature": "Relaxed",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Veluza",
+    "nature": "Hardy",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Dondozo",
+    "nature": "Naive",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Tatsugiri",
+    "nature": "Quiet",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Frigibax",
+    "nature": "Quiet",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Gimmighoul",
+    "nature": "Naughty",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  },
+  {
+    "name": "Poltchageist",
+    "nature": "Naughty",
+    "region": "Paldea",
+    "variant_data": { "regional": null, "paradox": null }
+  }
+]
