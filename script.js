@@ -1096,7 +1096,7 @@ window.onload = () => {
     const callistoImg = document.querySelector("#character-portrait img");
     if (callistoImg) {
         callistoImg.onclick = () => {
-            if (confirm("The resonance is stable. Do you wish to shatter it and wander again?")) {
+            if (confirm("...You're still not satisfied? Very well. You asked for this.")) {
                 localStorage.removeItem("enlightenment_result");
                 location.reload();
             }
