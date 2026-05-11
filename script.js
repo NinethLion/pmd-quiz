@@ -13,6 +13,14 @@ fetch('masterlist.json')
     })
     .catch(err => console.error("Fetch error:", err));
 	
+const bgmNormal = new Audio('bgm.mp3');
+const bgmAnomaly = new Audio('bgmano.mp3');
+
+bgmNormal.loop = true;
+bgmAnomaly.loop = true;
+
+let activeBGM = bgmNormal;
+	
 const introDialogue = [
     "So, you are the next one to wander into a world of Enlightenment, hm?",
     "Who am I? You can call me a freelance detective of sorts.",
@@ -694,6 +702,16 @@ function lockRegionAndStartNature() {
 
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
+	
+function switchMusic(toAnomaly) {
+    let oldTrack = toAnomaly ? bgmNormal : bgmAnomaly;
+    let newTrack = toAnomaly ? bgmAnomaly : bgmNormal;
+    const currentTime = oldTrack.currentTime;
+    oldTrack.pause();
+    newTrack.currentTime = currentTime;
+    newTrack.play().catch(err => console.warn("Audio swap blocked by browser. Wait for user interaction."));
+    activeBGM = newTrack;
+}
 
 typeWriter(quips[lockedRegion], () => {
         const nextBtn = document.createElement("button");
@@ -994,6 +1012,8 @@ function getFinalPokemon(nature, region) {
 }
 
 function triggerAnomaly() {
+    isAnomalyActive = true;
+    switchMusic(true); 
     document.body.style.filter = "invert(1) hue-rotate(180deg)";
     console.log("A Space-Time Distortion has occurred.");
 }
