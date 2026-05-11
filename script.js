@@ -721,7 +721,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 500) === 0) {
+    if (Math.floor(Math.random() * 1) === 0) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
@@ -785,18 +785,22 @@ function calculateFinalResult() {
 }
 
 function startPokemonReveal() {
+    // 1. Handle Anomaly first and exit immediately
     if (isAnomalyActive) {
         const anomalyPool = pokemonData.anomaly_pool || [];
         const anomaly = anomalyPool[Math.floor(Math.random() * anomalyPool.length)];
-		if (!anomaly) {
+        
+        if (!anomaly) {
             console.error("Anomaly pool is empty or missing!");
             return;
         }
-        currentPokemon = anomaly;
+
+        currentPokemon = anomaly; 
         displayFinalReveal(anomaly.name, "anomaly");
-        return;
+        return; // This prevents the rest of the function from running
     }
 
+    // 2. Standard Logic - Only runs if NOT an anomaly
     let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
     
     if (!matchedPokemon) {
@@ -807,25 +811,26 @@ function startPokemonReveal() {
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
 
-	if (matchedPokemon.variant_data.regional && rollRegional) {
+    // 3. Unified Variant Logic (Handles strings and arrays like Meowth/Tauros)
+    if (matchedPokemon.variant_data.regional && rollRegional) {
         const regionalData = matchedPokemon.variant_data.regional;
-        let chosenName = Array.isArray(regionalData) 
+        const chosenName = Array.isArray(regionalData) 
             ? regionalData[Math.floor(Math.random() * regionalData.length)] 
             : regionalData;
 
         currentPokemon = { name: chosenName }; 
         displayFinalReveal(chosenName, "variant");
-    }
-	else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
+    } 
+    else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
         const paradoxData = matchedPokemon.variant_data.paradox_name;
-        let chosenParadox = Array.isArray(paradoxData) 
+        const chosenParadox = Array.isArray(paradoxData) 
             ? paradoxData[Math.floor(Math.random() * paradoxData.length)] 
             : paradoxData;
 
         currentPokemon = { name: chosenParadox }; 
         displayFinalReveal(chosenParadox, "weak_paradox");
     }
-	else {
+    else {
         currentPokemon = matchedPokemon; 
         displayFinalReveal(matchedPokemon.name, "standard");
     }
@@ -943,7 +948,7 @@ function rollShiny(pokemon) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
-    const isShiny = Math.floor(Math.random() * 1) === 1;
+    const isShiny = Math.floor(Math.random() * 500) === 13;
 	logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
     if (isShiny) {
