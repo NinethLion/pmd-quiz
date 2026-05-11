@@ -702,16 +702,6 @@ function lockRegionAndStartNature() {
 
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
-	
-function switchMusic(toAnomaly) {
-    let oldTrack = toAnomaly ? bgmNormal : bgmAnomaly;
-    let newTrack = toAnomaly ? bgmAnomaly : bgmNormal;
-    const currentTime = oldTrack.currentTime;
-    oldTrack.pause();
-    newTrack.currentTime = currentTime;
-    newTrack.play().catch(err => console.warn("Audio swap blocked by browser. Wait for user interaction."));
-    activeBGM = newTrack;
-}
 
 typeWriter(quips[lockedRegion], () => {
         const nextBtn = document.createElement("button");
@@ -722,7 +712,7 @@ typeWriter(quips[lockedRegion], () => {
                 const nextBtn2 = document.createElement("button");
                 nextBtn2.innerText = "...";
                 nextBtn2.onclick = () => {
-					if (introIndex === 0) { bgmNormal.play().catch(e => console.log("Audio play deferred")); }
+					bgmNormal.play().catch(e => console.log("Audio play deferred"));
                     optionsContainer.innerHTML = ""; 
                     typeWriter("These questions... Might seem familiar to you. ...Ready?", () => {
                         const startNatureBtn = document.createElement("button");
