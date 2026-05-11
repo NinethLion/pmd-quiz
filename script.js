@@ -822,8 +822,8 @@ function startPokemonReveal() {
         return;
     }
 
-    const rollRegional = Math.random() < (1 / 20);
-    const rollParadox = Math.random() < (1 / 150);
+    const rollRegional = Math.random() < (1 / 1);
+    const rollParadox = Math.random() < (1 / 1);
     if (matchedPokemon.variant_data.regional && rollRegional) {
         const regionalData = matchedPokemon.variant_data.regional;
         const chosenName = Array.isArray(regionalData) ? regionalData[Math.floor(Math.random() * regionalData.length)] : regionalData;
