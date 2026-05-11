@@ -3,6 +3,7 @@ let isAnomalyActive = false;
 let finalNature = "";
 let lockedRegion = "";
 let natureQuestions = [];
+let currentPokemon = null;
 
 // Load the masterlist at the start of your script
 fetch('masterlist.json')
@@ -802,8 +803,8 @@ function startPokemonReveal() {
         return;
     }
 
-    let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
-    
+	let matched = getFinalPokemon(finalNature, lockedRegion);
+    currentPokemon = matched; 
     // Space-Time Distortion Rolls
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
