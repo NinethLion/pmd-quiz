@@ -1062,22 +1062,34 @@ function showResultsPage(data) {
     optionsContainer.appendChild(copyBtn);
 }
 
-window.onload = () => {
-    const savedData = localStorage.getItem("enlightenment_result");
-    
-    if (savedData) {
-        const data = JSON.parse(savedData);
-        if (data.isAnomaly) {
+if (data.isAnomaly) {
             document.body.style.filter = "invert(1) hue-rotate(180deg)";
+            bgmAnomaly.play().catch(() => {
+                console.log("Autoplay blocked. Music will start on next click.");
+            });
+        } else {
+            bgmNormal.play().catch(() => {
+                console.log("Autoplay blocked. Music will start on next click.");
+            });
         }
         showResultsPage(data);
     } else {
         renderQuestion();
     }
+	document.body.addEventListener('click', () => {
+        if (bgmNormal.paused && bgmAnomaly.paused) {
+            const saved = JSON.parse(localStorage.getItem("enlightenment_result"));
+            if (saved && saved.isAnomaly) {
+                bgmAnomaly.play();
+            } else if (saved) {
+                bgmNormal.play();
+            }
+        }
+    }, { once: true });
     const callistoImg = document.querySelector("#character-portrait img");
     if (callistoImg) {
         callistoImg.onclick = () => {
-            if (confirm("...You're still not satisfied? Very well. You asked for this.")) {
+            if (confirm("The resonance is stable. Do you wish to shatter it and wander again?")) {
                 localStorage.removeItem("enlightenment_result");
                 location.reload();
             }
