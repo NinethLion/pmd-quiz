@@ -3,16 +3,11 @@ let isAnomalyActive = false;
 let finalNature = "";
 let lockedRegion = "";
 let natureQuestions = [];
-let activeTypingTimeout; 
-let currentTextToSkip = ""; 
-let isCurrentlyTyping = false;
-let onTypingComplete = null;
-let fullDataRef = null; // New global to store the whole JSON
 
+// Load the masterlist at the start of your script
 fetch('masterlist.json')
     .then(response => response.json())
     .then(data => {
-        fullDataRef = data; // Save the whole thing (settings + entries)
         pokemonData = data.pokemon_entries;
     });
 	
@@ -47,9 +42,9 @@ const regionQuestions = [
         question: "If you were to find a relic from a lost era, what would it most likely be?",
         options: [
             { text: "A rusted tool that bears the marks of much use.", regionWeight: { Unova: 2, Galar: 1 } },
-            { text: "A sun-bleached stone carved with forgotten runes.", regionWeight: { Sinnoh: 2, Alola: 1 } },
-            { text: "An ornate tapestry depicting a crimson rose.", regionWeight: { Kalos: 2, Johto: 1 } },
-            { text: "A compass that seems to only point toward the sea.", regionWeight: { Hoenn: 2, Kanto: 1 } }
+            { text: "A sun-bleached stone carved with forgotten runes.", regionWeight: { Alola: 2, Sinnoh: 1 } },
+            { text: "An ornate tapestry depicting a crimson rose.", regionWeight: { Kanto: 2, Johto: 1 } },
+            { text: "A compass that seems to only point toward the sea.", regionWeight: { Hoenn: 2, Kalos: 1 } }
         ]
     },
     {
@@ -608,49 +603,19 @@ function renderQuestion() {
 }
 
 function typeWriter(text, callback) {
-    const textElement = document.getElementById("callisto-text");
-    
-    // Kill previous loop
-    clearTimeout(activeTypingTimeout);
-    textElement.innerHTML = "";
-    
-    // Set global state for the skip handler
-    currentTextToSkip = text;
-    isCurrentlyTyping = true;
-    onTypingComplete = callback;
-
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            textElement.innerHTML += text.charAt(i);
-            i++;
-            activeTypingTimeout = setTimeout(type, 25);
-        } else {
-            finishTyping();
-        }
-    }
-    type();
-}
-
-function finishTyping() {
-    isCurrentlyTyping = false;
-    // Small delay before allowing the "..." button to appear or callback to fire
-    setTimeout(() => {
-        if (onTypingComplete) onTypingComplete();
-    }, 150);
-}
-
-function typeWriterAppend(text, callback) {
     let i = 0;
     const textElement = document.getElementById("callisto-text");
     let typingTimeout;
     let isTyping = true;
 
+    if (textElement) textElement.innerHTML = "";
+
     const handleGlobalClick = (e) => {
         if (e.target.tagName === 'BUTTON') return;
+
         if (isTyping) {
             clearTimeout(typingTimeout);
-            textElement.innerHTML += text.slice(i);
+            textElement.innerHTML = text;
             finishTyping();
         }
     };
@@ -660,7 +625,9 @@ function typeWriterAppend(text, callback) {
     function finishTyping() {
         isTyping = false;
         window.removeEventListener("click", handleGlobalClick);
-        setTimeout(() => { if (callback) callback(); }, 150);
+        setTimeout(() => {
+            if (callback) callback();
+        }, 150);
     }
 
     function type() {
@@ -746,6 +713,8 @@ typeWriter(quips[lockedRegion], () => {
                         startNatureBtn.innerText = "...";
                         startNatureBtn.onclick = () => {
                             isNaturePhase = true;
+                            // Ensure pmdQuestionPool is the name of your 60+ question array
+                            natureQuestions = getRandomSubset(pmdQuestionPool, 10); 
                             currentStep = 0;
                             renderQuestion();
                         };
@@ -794,72 +763,61 @@ const natureFlavors = {
 };
 
 function calculateFinalResult() {
-    // 1. Determine Nature
+    // Determine the nature with the highest score
     finalNature = Object.keys(natureScores).reduce((a, b) => natureScores[a] > natureScores[b] ? a : b);
     
+    const textElement = document.getElementById("callisto-text");
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
 
-    const lines = natureFlavors[finalNature];
-    let currentIndex = 0;
+    // Step 1: Show Nature Flavor Text one by one
+    let flavorLines = natureFlavors[finalNature];
+    let lineIndex = 0;
 
-    // 2. Sequential Flavor Text
-    function playNextLine() {
-        optionsContainer.innerHTML = ""; 
-        
-        if (currentIndex < lines.length) {
-            typeWriter(lines[currentIndex], () => {
+    function showNextFlavorLine() {
+        if (lineIndex < flavorLines.length) {
+            typeWriter(flavorLines[lineIndex], () => {
                 const nextBtn = document.createElement("button");
                 nextBtn.innerText = "...";
                 nextBtn.onclick = () => {
-                    currentIndex++;
-                    playNextLine();
+                    lineIndex++;
+                    showNextFlavorLine();
                 };
+                optionsContainer.innerHTML = "";
                 optionsContainer.appendChild(nextBtn);
             });
         } else {
-            // 3. Move to Reveal
+            // Step 2: Proceed to the Pokémon Reveal
             startPokemonReveal();
         }
     }
-    playNextLine();
+
+    showNextFlavorLine();
 }
 
 function startPokemonReveal() {
-    // --- ANOMALY CHECK ---
-    if (isAnomalyActive && fullDataRef) {
-        const anomalyPool = fullDataRef.settings.anomalies;
-        const chosen = anomalyPool[Math.floor(Math.random() * anomalyPool.length)];
-        displayFinalReveal(chosen.name, "anomaly");
+    if (isAnomalyActive) {
+        const anomaly = pokemonData.anomaly_pool[Math.floor(Math.random() * pokemonData.anomaly_pool.length)];
+        displayFinalReveal(anomaly.name, "anomaly");
         return;
     }
 
-    // --- STANDARD MATCHING ---
-    let matched = pokemonData.find(p => p.nature === finalNature && p.region === lockedRegion);
+    let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
     
-    // Safety Fallback (if combo doesn't exist)
-    if (!matched) matched = pokemonData.find(p => p.nature === finalNature);
-    if (!matched) {
-        console.error("Critical: No Pokemon found for nature " + finalNature);
-        return;
-    }
-
-    let finalName = matched.name;
-    let resultType = "standard";
-
-    // --- VARIANT ROLLS (Using your JSON keys: regional / paradox) ---
+    // Space-Time Distortion Rolls
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
 
-    if (matched.variant_data?.regional && rollRegional) {
-        finalName = matched.variant_data.regional;
-        resultType = "variant";
-    } else if (matched.variant_data?.paradox && rollParadox) {
-        finalName = matched.variant_data.paradox;
-        resultType = "weak_paradox";
+    if (matchedPokemon.name === "Meowth" && rollRegional) {
+        const variants = ["Alolan Meowth", "Galarian Meowth"];
+        displayFinalReveal(variants[Math.floor(Math.random() * variants.length)], "variant");
+    } else if (matchedPokemon.variant_data.has_regional && rollRegional) {
+        displayFinalReveal(matchedPokemon.variant_data.regional_name, "variant");
+    } else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
+        displayFinalReveal(matchedPokemon.variant_data.paradox_name, "weak_paradox");
+    } else {
+        displayFinalReveal(matchedPokemon.name, "standard");
     }
-
-    displayFinalReveal(finalName, resultType);
 }
 
 function displayFinalReveal(pokemonName, resultType) {
@@ -870,7 +828,7 @@ function displayFinalReveal(pokemonName, resultType) {
     let teaser = `...Yes. You most certainly possess a ${finalNature} heart. The Pokemon you are deep down is...`;
 
     if (resultType === "anomaly") {
-        teaser = `...Wait. Your heart... it's emitting a frequency I've never heard. It's alien. It's...`;
+        teaser = `...Wait. Something is wrong. Your heart... it's emitting a frequency I've never heard. It's alien. It's...`;
     }
 
     typeWriter(teaser, () => {
@@ -880,9 +838,10 @@ function displayFinalReveal(pokemonName, resultType) {
             optionsContainer.innerHTML = "";
             typeWriter(`${pokemonName}.`, () => {
                 
+                // Add unique flavor text based on result type
                 let flavorText = "";
                 if (resultType === "anomaly") {
-                    flavorText = "<br><br>An Ultra Beast? A Paradox from the edge of time? You shouldn't exist here... yet here you are.";
+                    flavorText = "<br><br>An Ultra Beast? A Paradox from a distant edge of time? You shouldn't exist here... yet here you are.";
                 } else if (resultType === "variant") {
                     flavorText = "<br><br>A Regional Variant. Your form has adapted to a different horizon, carrying the echoes of another land.";
                 } else if (resultType === "weak_paradox") {
@@ -890,14 +849,14 @@ function displayFinalReveal(pokemonName, resultType) {
                 }
 
                 if (flavorText) {
-                    const span = document.createElement("span");
-                    span.innerHTML = flavorText;
-                    span.style.fontStyle = "italic";
-                    span.style.color = "#a0a0ff"; 
-                    textElement.appendChild(span);
+                    const flavorSpan = document.createElement("span");
+                    flavorSpan.innerHTML = flavorText;
+                    flavorSpan.style.fontStyle = "italic";
+                    flavorSpan.style.color = "#a0a0ff"; 
+                    textElement.appendChild(flavorSpan);
                 }
 
-                // Show Satisfaction UI
+                // Satisfaction Buttons
                 const yesBtn = document.createElement("button");
                 yesBtn.innerText = "I am satisfied.";
                 yesBtn.onclick = () => rollShiny(pokemonName);
@@ -920,7 +879,7 @@ function showAlternatives() {
     const optionsContainer = document.getElementById("options-container");
 
     // Filter all first-stage Pokemon of the same nature from ALL regions
-    const alts = pokemonData.pokemon_entries.filter(p => p.nature === finalNature);
+    const alts = pokemonData.filter(p => p.nature === finalNature);
     const randomAlts = getRandomSubset(alts, 5);
     
     textElement.innerHTML = "I see. Perhaps your heart resonates more clearly with one of these?";
@@ -947,9 +906,14 @@ function rollShiny(pokemonName) {
         finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
     }
 
-    typeWriterAppend(`\n\n${finalMessage}`);
+    typeWriter(finalMessage);
 }
 
+function getFinalPokemon(nature, region) {
+    // Returns the 1-3 Pokemon mapped to that nature/region combo
+    const pool = pokemonData.pokemon_entries.filter(p => p.nature === nature && p.region === region);
+    return pool[Math.floor(Math.random() * pool.length)];
+}
 function triggerAnomaly() {
     document.body.style.filter = "invert(1) hue-rotate(180deg)";
     console.log("A Space-Time Distortion has occurred.");
@@ -965,26 +929,8 @@ function getRandomSubset(array, size) {
 }
 
 function getFinalPokemon(nature, region) {
-    // Fixed: Search the array directly since pokemonData is already the entries array
-    const pool = pokemonData.filter(p => p.nature === nature && p.region === region);
-    return pool[Math.floor(Math.random() * pool.length)];
+    // Search the masterlist for the matching pair
+    return pokemonData.find(p => p.nature === nature && p.region === region);
 }
-
-window.addEventListener("click", (e) => {
-    // Ignore if clicking a button
-    if (e.target.tagName === 'BUTTON') return;
-
-    if (isCurrentlyTyping) {
-        // 1. Stop the animation
-        clearTimeout(activeTypingTimeout);
-        
-        // 2. Force the full text into the box
-        const textElement = document.getElementById("callisto-text");
-        textElement.innerHTML = currentTextToSkip;
-        
-        // 3. Trigger the finish logic
-        finishTyping();
-    }
-});
 
 window.onload = renderQuestion;
