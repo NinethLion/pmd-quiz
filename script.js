@@ -1041,14 +1041,12 @@ function showResultsPage(data) {
     let shinyText = data.shiny ? "SHINY" : "";
     let anomalyWarning = data.isAnomaly ? "d̸̜̐̿i̶̩͉͒͋̃š̶͚͔͜t̸̤̱̣͒ő̶͎̓r̵̙̄́͝ț̶̩̀̿i̶͔̋̄̇o̵̊̅̀͜ṋ̸̣͘" : "";
     const summary = `
-        [ MANIFESTATION RECORD ]
+        [Record of Enlightenment]
         Identity: ${shinyText}${data.name}
         Nature: ${data.nature}
         ${anomalyWarning}
     `;
-
-    textElement.innerText = "...Your manifestation has been recorded. You may return at any time to revisit your inner heart.";
-    
+    textElement.innerText = "...Your Enlightenment has been recorded. You may return at any time to revisit your inner heart.";
     const resultBox = document.createElement("div");
     resultBox.className = "result-box"; 
 	resultBox.style.whiteSpace = "pre-line";
