@@ -1074,7 +1074,7 @@ window.onload = () => {
         }
         showResultsPage(data);
     } else {
-        renderQuestion;
+        renderQuestion();
     }
     const callistoImg = document.querySelector("#character-portrait img");
     if (callistoImg) {
