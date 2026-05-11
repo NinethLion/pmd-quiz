@@ -926,16 +926,13 @@ function showAlternatives() {
     });
 }
 
-function logToGoogleSheets(pokemonName, nature) {
+function logToGoogleSheets(pokemonName, nature, isShinyStatus) {
     const formID = "1FAIpQLSdgZo4Ix999Jc581n06cjKc_DDcs5kBQCuPEeZrto9c4zWU5A"; 
-    
-    // Use the "formResponse" endpoint directly without the extra /u/0/
     const baseURL = `https://docs.google.com/forms/d/e/${formID}/formResponse`;
-    
     const formData = new FormData();
     formData.append("entry.2113001359", pokemonName);
     formData.append("entry.1480260884", nature);
-	formData.append("entry.1083012498", isShinyStatus? "Yes" : "No");
+	formData.append("entry.1083012498", isShinyStatus ? "Yes" : "No");
 
     fetch(baseURL, {
         method: "POST",
