@@ -924,7 +924,7 @@ function showAlternatives() {
     
     const originalPokemon = currentPokemon;
 
-    let altPool = pokemonData.filter(p => 
+    let altPool = pokemonData.pokemon_entries.filter(p => 
         p.nature === finalNature && 
         (Array.isArray(p.name) ? !p.name.includes(originalPokemon.name) : p.name !== originalPokemon.name)
     );
