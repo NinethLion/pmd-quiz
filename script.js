@@ -812,7 +812,8 @@ function startPokemonReveal() {
 
         currentPokemon = anomaly; 
         displayFinalReveal(anomaly.name, "anomaly");
-        ret
+        return;
+	}
 
     let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
     
