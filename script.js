@@ -797,7 +797,6 @@ function calculateFinalResult() {
 }
 
 function startPokemonReveal() {
-	logToGoogleSheets(currentPokemon ? currentPokemon.name : "Anomaly", finalNature);
     if (isAnomalyActive) {
         const anomaly = pokemonData.anomaly_pool[Math.floor(Math.random() * pokemonData.anomaly_pool.length)];
         displayFinalReveal(anomaly.name, "anomaly");
@@ -950,6 +949,7 @@ function rollShiny(pokemon) {
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
     const isShiny = Math.floor(Math.random() * 500) === 0;
+	logToGoogleSheets(pokemonName, finalNature);
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
     if (isShiny) {
         finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
@@ -957,7 +957,6 @@ function rollShiny(pokemon) {
 
     typeWriter(finalMessage);
 }
-
 
 function getFinalPokemon(nature, region) {
     // Returns the 1-3 Pokemon mapped to that nature/region combo
