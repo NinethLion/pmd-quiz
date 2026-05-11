@@ -26,218 +26,218 @@
     {
     "name": "Bulbasaur",
     "nature": "Docile",
-   "region": "Kanto",
+     "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Charmander",
     "nature": "Brave",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Squirtle",
     "nature": "Quirky",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Caterpie",
     "nature": "Timid",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Weedle",
     "nature": "Naughty",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Pidgey",
     "nature": "Bold",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Rattata",
     "nature": "Hardy",
-   "region": "Kanto",
+    "region": "Kanto",
     "evolution_line": ["Rattata", "Raticate"],
     "variant_data": {"regional": ["Alolan Rattata"], "paradox": null}
   },
   {
     "name": "Spearow",
     "nature": "Sassy",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Ekans",
     "nature": "Quiet",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Pichu",
     "nature": "Hasty",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Pichu"], "paradox": null}
   },
   {
     "name": "Sandshrew",
     "nature": "Hardy",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Sandshrew"], "paradox": null}
   },
   {
     "name": "Nidoran-F",
     "nature": "Calm",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Nidoran-M",
     "nature": "Rash",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Cleffa",
     "nature": "Bashful",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Vulpix",
     "nature": "Relaxed",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Vulpix"], "paradox": null}
   },
   {
     "name": "Igglybuff",
     "nature": "Naive",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": ["Scream Tail"]}
   },
   {
     "name": "Zubat",
     "nature": "Impish",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Oddish",
     "nature": "Quirky",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Paras",
     "nature": "Serious",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Venonat",
     "nature": "Mild",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Diglett",
     "nature": "Jolly",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Diglett"], "paradox": null}
   },
   {
     "name": "Meowth",
     "nature": "Sassy",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Meowth", "Galarian Meowth"], "paradox": null}
   },
   {
     "name": "Psyduck",
     "nature": "Careful",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Mankey",
     "nature": "Naughty",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Growlithe",
     "nature": "Adamant",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Hisuian Growlithe"], "paradox": null}
   },
   {
     "name": "Poliwag",
     "nature": "Gentle",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Abra",
     "nature": "Lonely",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Machop",
     "nature": "Brave",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Bellsprout",
     "nature": "Quiet",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Tentacool",
     "nature": "Calm",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Geodude",
     "nature": "Careful",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Geodude"], "paradox": null}
   },
   {
     "name": "Ponyta",
     "nature": "Timid",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Galarian Ponyta"], "paradox": null}
   },
   {
     "name": "Slowpoke",
     "nature": "Lax",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Galarian Slowpoke"], "paradox": null}
   },
   {
     "name": "Magnemite",
     "nature": "Serious",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": ["Sandy Shocks"]}
   },
   {
     "name": "Farfetch'd",
     "nature": "Adamant",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Galarian Farfetch'd"], "paradox": null}
   },
   {
     "name": "Doduo",
     "nature": "Hasty",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {
      "regional": null,
       "paradox": null
@@ -246,484 +246,484 @@
   {
     "name": "Seel",
     "nature": "Modest",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Grimer",
     "nature": "Bold",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Grimer"], "paradox": null}
   },
   {
     "name": "Shellder",
     "nature": "Bashful",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Gastly",
     "nature": "Impish",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Onix",
     "nature": "Rash",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Voltorb",
     "nature": "Hasty",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Hisuian Voltorb"], "paradox": null}
   },
   {
     "name": "Exeggcute",
     "nature": "Careful",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Exeggcute"], "paradox": null}
   },
   {
     "name": "Cubone",
     "nature": "Lonely",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Alolan Cubone"], "paradox": null}
   },
   {
     "name": "Tyrogue",
     "nature": "Brave",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Lickitung",
     "nature": "Naughty",
-   "region": "Kanto",
+    "region": "Kanto",
 	"variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Koffing",
     "nature": "Lax",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Galarian Koffing"], "paradox": null}
   },
   {
     "name": "Rhyhorn",
     "nature": "Gentle",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Happiny",
     "nature": "Jolly",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Tangela",
     "nature": "Relaxed",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Kangaskhan",
     "nature": "Gentle",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Horsea",
     "nature": "Naive",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Goldeen",
     "nature": "Modest",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Staryu",
     "nature": "Docile",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Mime Jr.",
     "nature": "Bashful",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Galarian Mime Jr."], "paradox": null}
   },
   {
     "name": "Scyther",
     "nature": "Adamant",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Smoochum",
     "nature": "Impish",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Elekid",
     "nature": "Bold",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Magby",
     "nature": "Sassy",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Pinsir",
     "nature": "Mild",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Tauros",
     "nature": "Rash",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": ["Paldean Tauros (Combat)", "Paldean Tauros (Blaze)", "Paldean Tauros (Aqua)"], "paradox": null}
   },
   {
     "name": "Magikarp",
     "nature": "Hardy",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Lapras",
     "nature": "Docile",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Ditto",
     "nature": "Quirky",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Eevee",
     "nature": "Jolly",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Porygon",
     "nature": "Serious",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Omanyte",
     "nature": "Quiet",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Kabuto",
     "nature": "Calm",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Aerodactyl",
     "nature": "Lonely",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Munchlax",
     "nature": "Lax",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Dratini",
     "nature": "Timid",
-   "region": "Kanto",
+    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Chikorita",
     "nature": "Docile",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Cyndaquil",
     "nature": "Timid",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Totodile",
     "nature": "Jolly",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Sentret",
     "nature": "Careful",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Hoothoot",
     "nature": "Calm",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Ledyba",
     "nature": "Quirky",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Spinarak",
     "nature": "Quiet",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Chinchou",
     "nature": "Modest",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Togepi",
     "nature": "Gentle",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Natu",
     "nature": "Serious",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Mareep",
     "nature": "Mild",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Hoppip",
     "nature": "Bashful",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Aipom",
     "nature": "Hasty",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Sunkern",
     "nature": "Jolly",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Yanma",
     "nature": "Docile",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Wooper",
     "nature": "Lax",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": ["Paldean Wooper"], "paradox": null}
   },
   {
     "name": "Murkrow",
     "nature": "Naughty",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Misdreavus",
     "nature": "Impish",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": ["Flutter Mane"]
     }
   },
   {
     "name": "Unown",
     "nature": "Quirky",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Girafarig",
     "nature": "Bold",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Pineco",
     "nature": "Quiet",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Dunsparce",
     "nature": "Mild",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Gligar",
     "nature": "Naughty",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Snubbull",
     "nature": "Rash",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Qwilfish",
     "nature": "Rash",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": ["Hisuian Qwilfish"], "paradox": null}
   },
   {
     "name": "Shuckle",
     "nature": "Hardy",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Heracross",
     "nature": "Brave",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Sneasel",
     "nature": "Sassy",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": ["Hisuian Sneasel"], "paradox": null}
   },
   {
     "name": "Teddiursa",
     "nature": "Naive",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Slugma",
     "nature": "Lax",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Swinub",
     "nature": "Calm",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Corsola",
     "nature": "Modest",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {
      "regional": ["Galarian Corsola"], "paradox": null}
   },
   {
     "name": "Remoraid",
     "nature": "Timid",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Delibird",
     "nature": "Gentle",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {
      "regional": null, "paradox": ["Iron Bundle"]}
   },
   {
     "name": "Skarmory",
     "nature": "Adamant",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Houndour",
     "nature": "Lonely",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Phanpy",
     "nature": "Relaxed",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": ["Great Tusk", "Iron Treads"]}
   },
   {
     "name": "Stantler",
     "nature": "Brave",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Smeargle",
     "nature": "Careful",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Miltank",
     "nature": "Relaxed",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Larvitar",
     "nature": "Lonely",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": ["Iron Thorns"]}
   },
   {
     "name": "Azurill",
     "nature": "Naive",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Wynaut",
     "nature": "Bashful",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Bonsly",
     "nature": "Hardy",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
     "name": "Mantyke",
     "nature": "Bold",
-   "region": "Johto",
+    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
   },
   {
