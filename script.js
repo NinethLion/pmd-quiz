@@ -798,29 +798,58 @@ function calculateFinalResult() {
 
 function startPokemonReveal() {
     if (isAnomalyActive) {
-        const anomaly = pokemonData.anomaly_pool[Math.floor(Math.random() * pokemonData.anomaly_pool.length)];
+        const anomalyPool = pokemonData.anomaly_pool || [];
+        const anomaly = anomalyPool[Math.floor(Math.random() * anomalyPool.length)];
+        currentPokemon = anomaly;
         displayFinalReveal(anomaly.name, "anomaly");
         return;
     }
 
-	let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
-    currentPokemon = matchedPokemon;
-	if (!matchedPokemon) {
+    let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
+    
+    if (!matchedPokemon) {
         console.error("No Pokemon found for this combo!");
         return;
     }
-    // Space-Time Distortion Rolls
+
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
 
-    if (matchedPokemon.name === "Meowth" && rollRegional) {
-        const variants = ["Alolan Meowth", "Galarian Meowth"];
-        displayFinalReveal(variants[Math.floor(Math.random() * variants.length)], "variant");
-    } else if (matchedPokemon.variant_data.regional) {
-        displayFinalReveal(matchedPokemon.variant_data.regional_name, "variant");
-    } else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
-        displayFinalReveal(matchedPokemon.variant_data.paradox_name, "weak_paradox");
-    } else {
+    // 1. Unified Regional Variant Logic (Handles Meowth AND everyone else)
+    if (matchedPokemon.variant_data.regional && rollRegional) {
+        const regionalData = matchedPokemon.variant_data.regional;
+        let chosenName;
+
+        if (Array.isArray(regionalData)) {
+            // It's a list (like Meowth), pick one at random
+            chosenName = regionalData[Math.floor(Math.random() * regionalData.length)];
+        } else {
+            // It's a single string (like Vulpix), use it directly
+            chosenName = regionalData;
+        }
+
+        currentPokemon = { name: chosenName }; 
+        displayFinalReveal(chosenName, "variant");
+    } 
+    // 2. Handle Paradox Forms
+    else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
+        const paradoxData = matchedPokemon.variant_data.paradox_name;
+        let chosenParadox;
+
+        if (Array.isArray(paradoxData)) {
+            // Pick randomly between Iron Moth and Slither Wing
+            chosenParadox = paradoxData[Math.floor(Math.random() * paradoxData.length)];
+        } else {
+            // Use the single name string
+            chosenParadox = paradoxData;
+        }
+
+        currentPokemon = { name: chosenParadox }; 
+        displayFinalReveal(chosenParadox, "weak_paradox");
+    }
+    // 3. Standard Manifestation
+    else {
+        currentPokemon = matchedPokemon; 
         displayFinalReveal(matchedPokemon.name, "standard");
     }
 }
