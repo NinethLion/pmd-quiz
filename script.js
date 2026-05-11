@@ -980,6 +980,14 @@ function rollShiny(pokemon) {
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
     const isShiny = Math.floor(Math.random() * 500) === 13;
+	const resultData = {
+        name: pokemonName,
+        nature: finalNature,
+        shiny: isShiny,
+        region: lockedRegion,
+        isAnomaly: isAnomalyActive
+    };
+    localStorage.setItem("enlightenment_result", JSON.stringify(resultData));
 	logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
     if (isShiny) {
@@ -1030,5 +1038,54 @@ function switchMusic(toAnomaly) {
     newTrack.play().catch(e => console.error("Music swap failed:", e)); 
     activeBGM = newTrack;
 }
+
+function showResultsPage(data) {
+    const textElement = document.getElementById("callisto-text");
+    const optionsContainer = document.getElementById("options-container");
+    optionsContainer.innerHTML = "";
+    let shinyText = data.shiny ? "SHINY" : "";
+    let anomalyWarning = data.isAnomaly ? "d̸̜̐̿i̶̩͉͒͋̃š̶͚͔͜t̸̤̱̣͒ő̶͎̓r̵̙̄́͝ț̶̩̀̿i̶͔̋̄̇o̵̊̅̀͜ṋ̸̣͘" : "";
+    const summary = `
+        [ MANIFESTATION RECORD ]
+        Identity: ${shinyText}${data.name}
+        Nature: ${data.nature}
+        ${anomalyWarning}
+    `;
+
+    textElement.innerText = "...Your manifestation has been recorded. You may return at any time to revisit your inner heart.";
+    
+    const resultBox = document.createElement("div");
+    resultBox.className = "result-box"; 
+    resultBox.innerText = summary;
+    optionsContainer.appendChild(resultBox);
+
+    const copyBtn = document.createElement("button");
+    copyBtn.innerText = "Copy Results";
+    copyBtn.onclick = () => {
+        navigator.clipboard.writeText(summary);
+        copyBtn.innerText = "Saved to Clipboard!";
+    };
+    optionsContainer.appendChild(copyBtn);
+}
+
+window.onload = () => {
+    const savedData = localStorage.getItem("enlightenment_result");
+    if (savedData) {
+        const data = JSON.parse(savedData);
+        showResultsPage(data);
+    } else {
+        displayIntro();
+    }
+
+    const callistoImg = document.getElementById("#character-portrait img");
+    if (callistoImg) {
+        callistoImg.onclick = () => {
+            if (confirm("...You're still not satisfied? Very well. You asked for this.")) {
+                localStorage.removeItem("enlightenment_result");
+                location.reload();
+            }
+        };
+    }
+};
 
 window.onload = renderQuestion;
