@@ -975,9 +975,4 @@ function getRandomSubset(array, size) {
     return shuffled.slice(0, size);
 }
 
-function getFinalPokemon(nature, region) {
-    // Search the masterlist for the matching pair
-    return pokemonData.find(p => p.nature === nature && p.region === region);
-}
-
 window.onload = renderQuestion;
