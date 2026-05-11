@@ -994,7 +994,13 @@ function rollShiny(pokemon) {
         finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
     }
     typeWriter(finalMessage, () => {
-        showResultsPage(resultData);
+        const nextBtn = document.createElement("button");
+        nextBtn.innerText = "...";
+        nextBtn.onclick = () => {
+            optionsContainer.innerHTML = "";
+            showResultsPage(resultData);
+        };
+        optionsContainer.appendChild(nextBtn);
     });
 }
 
