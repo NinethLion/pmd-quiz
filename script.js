@@ -804,7 +804,7 @@ function startPokemonReveal() {
     }
 
 	let matched = getFinalPokemon(finalNature, lockedRegion);
-    currentPokemon = matched; 
+    currentPokemon = matchedPokemon; 
     // Space-Time Distortion Rolls
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
