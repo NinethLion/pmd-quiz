@@ -987,9 +987,15 @@ function rollShiny(pokemon) {
         isAnomaly: isAnomalyActive
     };
     localStorage.setItem("enlightenment_result", JSON.stringify(resultData));
-
     logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
-    showResultsPage(resultData);
+
+    let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
+    if (isShiny) {
+        finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
+    }
+    typeWriter(finalMessage, () => {
+        showResultsPage(resultData);
+    });
 }
 
 function getFinalPokemon(nature, region) {
