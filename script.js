@@ -723,7 +723,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 500) === 0) {
+    if (Math.floor(Math.random() * 1) === 0) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
