@@ -1073,7 +1073,7 @@ window.onload = () => {
         }
         showResultsPage(data);
     } else {
-        displayIntro();
+        renderQuestion;
     }
     const callistoImg = document.querySelector("#character-portrait img");
     if (callistoImg) {
@@ -1085,5 +1085,3 @@ window.onload = () => {
         };
     }
 };
-//test
-window.onload = renderQuestion;
