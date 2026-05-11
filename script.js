@@ -839,50 +839,76 @@ function displayFinalReveal(pokemonName, resultType) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
 
+    // 1. SET INITIAL TEASER
     let teaser = `...Yes. You most certainly possess a ${finalNature} heart. The Pokemon you are deep down is...`;
-
+    
     if (resultType === "anomaly") {
-        teaser = `...Wait. Something is wrong. Your heart... it's emitting a frequency I've never heard. It's alien. It's...`;
+        teaser = "Something from beyond the laws of time and space. You shouldn't exist here... yet here you are.";
     }
 
+    // 2. START THE FIRST TYPEWRITER PHASE
     typeWriter(teaser, () => {
         const nextBtn = document.createElement("button");
         nextBtn.innerText = "...";
         nextBtn.onclick = () => {
             optionsContainer.innerHTML = "";
-            typeWriter(`${pokemonName}.`, () => {
-                
-                let flavorText = "";
-                if (resultType === "anomaly") {
-                    flavorText = "<br><br>An Ultra Beast? A Paradox from a distant edge of time? You shouldn't exist here... yet here you are.";
-                } else if (resultType === "variant") {
-                    flavorText = "<br><br>A Regional Variant. Your form has adapted to a different horizon, carrying the echoes of another land.";
-                } else if (resultType === "weak_paradox") {
-                    flavorText = "<br><br>A Paradox... you carry a faint, impossible rhythm from a time that is not our own.";
-                }
 
-                if (flavorText) {
-                    const flavorSpan = document.createElement("span");
-                    flavorSpan.innerHTML = flavorText;
-                    flavorSpan.style.fontStyle = "italic";
-                    flavorSpan.style.color = "#a0a0ff"; 
-                    textElement.appendChild(flavorSpan);
-                }
-
-                const yesBtn = document.createElement("button");
-                yesBtn.innerText = "I am satisfied.";
-                yesBtn.onclick = () => rollShiny(pokemonName);
-                optionsContainer.appendChild(yesBtn);
-
-                if (resultType !== "anomaly") {
-                    const noBtn = document.createElement("button");
-                    noBtn.innerText = "This doesn't feel right...";
-                    noBtn.onclick = () => showAlternatives();
-                    optionsContainer.appendChild(noBtn);
-                }
-            });
+            // 3. ANOMALY SPECIAL STEP: Show JSON flavor text
+            if (resultType === "anomaly") {
+                const anomalyFlavor = currentPokemon.flavor || "A ripple in the fabric of reality.";
+                typeWriter(anomalyFlavor, () => {
+                    const finalNextBtn = document.createElement("button");
+                    finalNextBtn.innerText = "...";
+                    finalNextBtn.onclick = () => {
+                        optionsContainer.innerHTML = "";
+                        finishReveal(pokemonName, resultType);
+                    };
+                    optionsContainer.appendChild(finalNextBtn);
+                });
+            } else {
+                // Standard flow skips the extra box
+                finishReveal(pokemonName, resultType);
+            }
         };
         optionsContainer.appendChild(nextBtn);
+    });
+}
+
+// 4. HELPER FUNCTION: Handles the name reveal and final buttons
+function finishReveal(pokemonName, resultType) {
+    const textElement = document.getElementById("callisto-text");
+    const optionsContainer = document.getElementById("options-container");
+
+    typeWriter(`${pokemonName}.`, () => {
+        let subFlavorText = "";
+        
+        // Add italicized flavor labels for variants and paradoxes
+        if (resultType === "variant") {
+            subFlavorText = "<br><br>A Regional Variant. Your form has adapted to a different horizon, carrying the echoes of another land.";
+        } else if (resultType === "weak_paradox") {
+            subFlavorText = "<br><br>A Paradox... you carry a faint, impossible rhythm from a time that is not our own.";
+        }
+
+        if (subFlavorText) {
+            const flavorSpan = document.createElement("span");
+            flavorSpan.innerHTML = subFlavorText;
+            flavorSpan.style.fontStyle = "italic";
+            flavorSpan.style.color = "#a0a0ff";
+            textElement.appendChild(flavorSpan);
+        }
+
+        // Final Action Buttons
+        const yesBtn = document.createElement("button");
+        yesBtn.innerText = "I am satisfied.";
+        yesBtn.onclick = () => rollShiny(pokemonName);
+        optionsContainer.appendChild(yesBtn);
+
+        if (resultType !== "anomaly") {
+            const noBtn = document.createElement("button");
+            noBtn.innerText = "This doesn't feel right...";
+            noBtn.onclick = () => showAlternatives();
+            optionsContainer.appendChild(noBtn);
+        }
     });
 }
 
