@@ -800,21 +800,19 @@ function calculateFinalResult() {
 
 function startPokemonReveal() {
     if (isAnomalyActive) {
-        const anomalyPool = (pokemonData.settings && pokemonData.settings.anomaly) 
-            ? pokemonData.settings.anomaly 
-            : [];
-            
-        const anomaly = anomalyPool[Math.floor(Math.random() * anomalyPool.length)];
+        const fullAnomalyList = (pokemonData.settings && pokemonData.settings.anomaly) ? pokemonData.settings.anomaly : [];
+        const regionalAnomalyPool = fullAnomalyList.filter(a => a.pools.includes(lockedRegion));
+        const poolToUse = regionalAnomalyPool.length > 0 ? regionalAnomalyPool : fullAnomalyList;
+        const anomaly = poolToUse[Math.floor(Math.random() * poolToUse.length)];
         
         if (!anomaly) {
-            console.error("Anomaly pool is empty! Check JSON structure.");
+            console.error("Anomaly selection failed.");
             return;
         }
 
         currentPokemon = anomaly; 
         displayFinalReveal(anomaly.name, "anomaly");
-        return; 
-    }
+        ret
 
     let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
     
@@ -980,7 +978,7 @@ function rollShiny(pokemon) {
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
     const isShiny = Math.floor(Math.random() * 500) === 13;
-	const resultData = {
+    const resultData = {
         name: pokemonName,
         nature: finalNature,
         shiny: isShiny,
@@ -988,13 +986,9 @@ function rollShiny(pokemon) {
         isAnomaly: isAnomalyActive
     };
     localStorage.setItem("enlightenment_result", JSON.stringify(resultData));
-	logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
-    let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
-    if (isShiny) {
-        finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
-    }
 
-    typeWriter(finalMessage);
+    logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
+    showResultsPage(resultData);
 }
 
 function getFinalPokemon(nature, region) {
@@ -1056,6 +1050,7 @@ function showResultsPage(data) {
     
     const resultBox = document.createElement("div");
     resultBox.className = "result-box"; 
+	resultBox.style.whiteSpace = "pre-line";
     resultBox.innerText = summary;
     optionsContainer.appendChild(resultBox);
 
@@ -1070,17 +1065,20 @@ function showResultsPage(data) {
 
 window.onload = () => {
     const savedData = localStorage.getItem("enlightenment_result");
+    
     if (savedData) {
         const data = JSON.parse(savedData);
+        if (data.isAnomaly) {
+            document.body.style.filter = "invert(1) hue-rotate(180deg)";
+        }
         showResultsPage(data);
     } else {
         displayIntro();
     }
-
-    const callistoImg = document.getElementById("#character-portrait img");
+    const callistoImg = document.querySelector("#character-portrait img");
     if (callistoImg) {
         callistoImg.onclick = () => {
-            if (confirm("...You're still not satisfied? Very well. You asked for this.")) {
+            if (confirm("The resonance is stable. Do you wish to shatter it and wander again?")) {
                 localStorage.removeItem("enlightenment_result");
                 location.reload();
             }
