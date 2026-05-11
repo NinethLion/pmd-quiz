@@ -929,31 +929,28 @@ function showAlternatives() {
 
 function logToGoogleSheets(pokemonName, nature) {
     const formID = "1FAIpQLSdgZo4Ix999Jc581n06cjKc_DDcs5kBQCuPEeZrto9c4zWU5A"; 
-    const pokemonEntryID = "entry.2113001359"; 
-    const natureEntryID = "entry.1480260884";
-    const baseURL = `https://docs.google.com/forms/u/0/d/e/$1FAIpQLSdgZo4Ix999Jc581n06cjKc_DDcs5kBQCuPEeZrto9c4zWU5A/formResponse`;
+    
+    // Use the "formResponse" endpoint directly without the extra /u/0/
+    const baseURL = `https://docs.google.com/forms/d/e/${formID}/formResponse`;
+    
     const formData = new FormData();
-    formData.append(pokemonEntryID, pokemonName);
-    formData.append(natureEntryID, nature);
+    formData.append("entry.2113001359", pokemonName);
+    formData.append("entry.1480260884", nature);
 
     fetch(baseURL, {
         method: "POST",
         mode: "no-cors",
         body: formData
     })
-    .then(() => console.log("Enlightenment logged to the stars."))
     .catch((err) => console.error("Logging failed:", err));
 }
 
-function rollShiny(pokemonName) {
+function rollShiny(pokemon) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
-    
-    // 1/500 Shiny Chance
+    const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
     const isShiny = Math.floor(Math.random() * 500) === 0;
-    
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
-    
     if (isShiny) {
         finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
     }
