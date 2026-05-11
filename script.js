@@ -4,7 +4,7 @@ let finalNature = "";
 let lockedRegion = "";
 let natureQuestions = [];
 let currentPokemon = null;
-
+// test
 fetch('masterlist.json')
     .then(response => response.json())
     .then(data => {
