@@ -735,7 +735,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 1) === 0) {
+    if (Math.floor(Math.random() * 500) === 13) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
@@ -1046,7 +1046,9 @@ function showResultsPage(data) {
         Nature: ${data.nature}
         ${anomalyWarning}
     `;
+
     textElement.innerText = "...Your Enlightenment has been recorded. You may return at any time to revisit your inner heart.";
+    
     const resultBox = document.createElement("div");
     resultBox.className = "result-box"; 
 	resultBox.style.whiteSpace = "pre-line";
@@ -1062,6 +1064,9 @@ function showResultsPage(data) {
     optionsContainer.appendChild(copyBtn);
 }
 
+window.onload = () => {
+    const savedData = localStorage.getItem("enlightenment_result");
+    
 if (data.isAnomaly) {
             document.body.style.filter = "invert(1) hue-rotate(180deg)";
             bgmAnomaly.play().catch(() => {
