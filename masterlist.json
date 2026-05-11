@@ -453,7 +453,6 @@
    "region": "Kanto",
     "variant_data": {"regional": null, "paradox": null}
   },
-[
   {
     "name": "Chikorita",
     "nature": "Docile",
@@ -726,7 +725,7 @@
     "nature": "Bold",
    "region": "Johto",
     "variant_data": {"regional": null, "paradox": null}
-  }
+  },
   {
     "name": "Treecko",
     "nature": "Sassy",
@@ -1104,7 +1103,7 @@
     "nature": "Timid",
     "region": "Hoenn",
     "variant_data": { "regional": null, "paradox": null }
-  }
+  },
   {
     "name": "Turtwig",
     "nature": "Bold",
@@ -1290,7 +1289,7 @@
     "nature": "Hasty",
     "region": "Sinnoh",
     "variant_data": { "regional": null, "paradox": null }
-  }
+  },
   {
     "name": "Snivy",
     "nature": "Sassy",
@@ -1704,7 +1703,7 @@
     "nature": "Sassy",
     "region": "Unova",
     "variant_data": {"regional": null, "paradox": ["Iron Moth", "Slither Wing"]}
-  }
+  },
   {
     "name": "Chespin",
     "nature": "Brave",
@@ -1890,7 +1889,7 @@
     "nature": "Hasty",
     "region": "Kalos",
     "variant_data": { "regional": null, "paradox": null }
-  }
+  },
   {
     "name": "Rowlet",
     "nature": "Docile",
@@ -2094,7 +2093,7 @@
     "nature": "Brave",
     "region": "Alola",
     "variant_data": { "regional": null, "paradox": null }
-  }
+  },
   {
     "name": "Grookey",
     "nature": "Relaxed",
@@ -2316,7 +2315,7 @@
     "nature": "Mild",
     "region": "Galar",
     "variant_data": { "regional": null, "paradox": null }
-  }
+  },
   {
     "name": "Sprigatito",
     "nature": "Impish",
@@ -2558,3 +2557,4 @@
     "variant_data": { "regional": null, "paradox": null }
   }
 ]
+}
