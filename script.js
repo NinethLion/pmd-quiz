@@ -729,7 +729,7 @@ typeWriter(quips[lockedRegion], () => {
     });
 
     // Check for the anomaly (13 is as good as 7!)
-    if (Math.floor(Math.random() * 500) === 0) {
+    if (Math.floor(Math.random() * 20) === 13) {
         isAnomalyActive = true;
         triggerAnomaly(); // Triggers the screen flip
     }
