@@ -654,6 +654,9 @@ function typeWriter(text, callback) {
 }
 
 function advanceIntro() {
+    if (introIndex === 0 && bgmNormal.paused) {
+        bgmNormal.play().catch(e => console.log("Audio deferred"));
+    }
     introIndex++;
     if (introIndex >= introDialogue.length) {
         isIntroPhase = false; 
