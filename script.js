@@ -4,12 +4,14 @@ let finalNature = "";
 let lockedRegion = "";
 let natureQuestions = [];
 let currentPokemon = null;
-// test
+
 fetch('masterlist.json')
     .then(response => response.json())
     .then(data => {
-        pokemonData = data.pokemon_entries;
-    });
+        pokemonData = data;
+        console.log("Masterlist loaded:", pokemonData);
+    })
+    .catch(err => console.error("Fetch error:", err));
 	
 const introDialogue = [
     "So, you are the next one to wander into a world of Enlightenment, hm?",
@@ -721,7 +723,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 1) === 0) {
+    if (Math.floor(Math.random() * 500) === 0) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
@@ -785,48 +787,44 @@ function calculateFinalResult() {
 }
 
 function startPokemonReveal() {
-    // 1. Handle Anomaly first and exit immediately
     if (isAnomalyActive) {
-        const anomalyPool = pokemonData.anomaly_pool || [];
+        // Path matches your JSON: settings -> anomaly
+        const anomalyPool = (pokemonData.settings && pokemonData.settings.anomaly) 
+            ? pokemonData.settings.anomaly 
+            : [];
+            
         const anomaly = anomalyPool[Math.floor(Math.random() * anomalyPool.length)];
         
         if (!anomaly) {
-            console.error("Anomaly pool is empty or missing!");
+            console.error("Anomaly pool is empty! Check JSON structure.");
             return;
         }
 
         currentPokemon = anomaly; 
         displayFinalReveal(anomaly.name, "anomaly");
-        return; // This prevents the rest of the function from running
+        return; 
     }
 
-    // 2. Standard Logic - Only runs if NOT an anomaly
     let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
     
     if (!matchedPokemon) {
-        console.error("No Pokemon found for this combo!");
+        console.error("No Pokemon found!");
         return;
     }
 
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
 
-    // 3. Unified Variant Logic (Handles strings and arrays like Meowth/Tauros)
+    // Standard Regional/Paradox logic...
     if (matchedPokemon.variant_data.regional && rollRegional) {
         const regionalData = matchedPokemon.variant_data.regional;
-        const chosenName = Array.isArray(regionalData) 
-            ? regionalData[Math.floor(Math.random() * regionalData.length)] 
-            : regionalData;
-
+        const chosenName = Array.isArray(regionalData) ? regionalData[Math.floor(Math.random() * regionalData.length)] : regionalData;
         currentPokemon = { name: chosenName }; 
         displayFinalReveal(chosenName, "variant");
     } 
     else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
         const paradoxData = matchedPokemon.variant_data.paradox_name;
-        const chosenParadox = Array.isArray(paradoxData) 
-            ? paradoxData[Math.floor(Math.random() * paradoxData.length)] 
-            : paradoxData;
-
+        const chosenParadox = Array.isArray(paradoxData) ? paradoxData[Math.floor(Math.random() * paradoxData.length)] : paradoxData;
         currentPokemon = { name: chosenParadox }; 
         displayFinalReveal(chosenParadox, "weak_paradox");
     }
@@ -959,11 +957,12 @@ function rollShiny(pokemon) {
 }
 
 function getFinalPokemon(nature, region) {
-	if (!pokemonData || pokemonData.length === 0) {
-        console.error("Masterlist not loaded yet!");
+    if (!pokemonData || !pokemonData.pokemon_entries) {
+        console.error("Masterlist entries not found!");
         return null;
     }
-	const pool = pokemonData.filter(p => p.nature === nature && p.region === region);
+
+    const pool = pokemonData.pokemon_entries.filter(p => p.nature === nature && p.region === region);
     
     if (pool.length === 0) {
         console.warn(`No match for ${nature} in ${region}.`);
@@ -972,6 +971,7 @@ function getFinalPokemon(nature, region) {
 
     return pool[Math.floor(Math.random() * pool.length)];
 }
+
 function triggerAnomaly() {
     document.body.style.filter = "invert(1) hue-rotate(180deg)";
     console.log("A Space-Time Distortion has occurred.");
