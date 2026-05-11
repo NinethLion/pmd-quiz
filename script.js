@@ -957,8 +957,17 @@ function rollShiny(pokemon) {
 }
 
 function getFinalPokemon(nature, region) {
-    // Returns the 1-3 Pokemon mapped to that nature/region combo
-    const pool = pokemonData.pokemon_entries.filter(p => p.nature === nature && p.region === region);
+	if (!pokemonData || pokemonData.length === 0) {
+        console.error("Masterlist not loaded yet!");
+        return null;
+    }
+	const pool = pokemonData.filter(p => p.nature === nature && p.region === region);
+    
+    if (pool.length === 0) {
+        console.warn(`No match for ${nature} in ${region}.`);
+        return null;
+    }
+
     return pool[Math.floor(Math.random() * pool.length)];
 }
 function triggerAnomaly() {
