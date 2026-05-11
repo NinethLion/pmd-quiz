@@ -1078,7 +1078,8 @@ if (data.isAnomaly) {
             });
         }
         showResultsPage(data);
-    } else {
+    } 
+	else {
         renderQuestion();
     }
 	document.body.addEventListener('click', () => {
