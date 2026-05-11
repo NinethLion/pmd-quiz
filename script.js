@@ -877,19 +877,44 @@ function displayFinalReveal(pokemonName, resultType) {
 function showAlternatives() {
     const textElement = document.getElementById("callisto-text");
     const optionsContainer = document.getElementById("options-container");
-
-    // Filter all first-stage Pokemon of the same nature from ALL regions
-    const alts = pokemonData.filter(p => p.nature === finalNature);
-    const randomAlts = getRandomSubset(alts, 5);
     
-    textElement.innerHTML = "I see. Perhaps your heart resonates more clearly with one of these?";
-    optionsContainer.innerHTML = "";
+    // 1. Identify the 'rejected' Pokemon so we don't pick it for the new 5
+    const originalName = currentPokemon.name;
 
-    randomAlts.forEach(alt => {
-        const btn = document.createElement("button");
-        btn.innerText = alt.name;
-        btn.onclick = () => rollShiny(alt.name);
-        optionsContainer.appendChild(btn);
+    // 2. Create a pool of all OTHER Pokemon with the same nature
+    // (Regardless of region, to ensure we have enough variety)
+    let altPool = pokemonData.filter(p => 
+        p.nature === finalNature && 
+        p.name !== originalName
+    );
+
+    // 3. Shuffle and pick 5 unique alternatives
+    let alternatives = [];
+    altPool = altPool.sort(() => 0.5 - Math.random());
+    
+    // We take up to 5 (in case the nature pool is very small)
+    alternatives = altPool.slice(0, 5);
+
+    optionsContainer.innerHTML = "";
+    
+    typeWriter("Are you saying I read wrong...? Hm. Maybe one of these will satisfy you, then.", () => {
+        // Create buttons for the 5 NEW options
+        alternatives.forEach(alt => {
+            const btn = document.createElement("button");
+            // Handle if name is an array or string
+            const displayName = Array.isArray(alt.name) ? alt.name[0] : alt.name;
+            btn.innerText = displayName;
+            btn.onclick = () => rollShiny(displayName);
+            optionsContainer.appendChild(btn);
+        });
+
+        // 4. Add the "Actually it's okay" option (The 6th Option)
+        const backBtn = document.createElement("button");
+        backBtn.innerText = `Actually, ${originalName} was right...`;
+        backBtn.style.fontStyle = "italic";
+        backBtn.style.marginTop = "10px"; // Visual separation
+        backBtn.onclick = () => rollShiny(originalName);
+        optionsContainer.appendChild(backBtn);
     });
 }
 
