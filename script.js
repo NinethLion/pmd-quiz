@@ -729,7 +729,7 @@ typeWriter(quips[lockedRegion], () => {
     });
 
     // Check for the anomaly (13 is as good as 7!)
-    if (Math.floor(Math.random() * 20) === 13) {
+    if (Math.floor(Math.random() * 500) === 0) {
         isAnomalyActive = true;
         triggerAnomaly(); // Triggers the screen flip
     }
@@ -955,13 +955,14 @@ function showAlternatives() {
     });
 }
 
-function logToGoogleSheets(pokemonName, nature, isShinyStatus) {
+function logToGoogleSheets(pokemonName, nature, isShinyStatus, region) {
     const formID = "1FAIpQLSdgZo4Ix999Jc581n06cjKc_DDcs5kBQCuPEeZrto9c4zWU5A"; 
     const baseURL = `https://docs.google.com/forms/d/e/${formID}/formResponse`;
     const formData = new FormData();
     formData.append("entry.2113001359", pokemonName);
     formData.append("entry.1480260884", nature);
 	formData.append("entry.1083012498", isShinyStatus ? "Yes" : "No");
+	formData.append("entry.1281508392", region);
 
     fetch(baseURL, {
         method: "POST",
@@ -975,8 +976,8 @@ function rollShiny(pokemon) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
-    const isShiny = Math.floor(Math.random() * 500) === 0;
-	logToGoogleSheets(pokemonName, finalNature, isShiny);
+    const isShiny = Math.floor(Math.random() * 1) === 1;
+	logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
     if (isShiny) {
         finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
