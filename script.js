@@ -23,44 +23,44 @@ const regionQuestions = [
     {
         question: "Tell me... In your ideal home, when you close your eyes, what do you hear?",
         options: [
-            { text: "The hustle and bustle of a city that never sleeps.", regionWeight: { Unova: 2, Galar: 1 } },
+            { text: "The hustle and bustle of a city that never sleeps.", regionWeight: { Unova: 2, Kalos: 1 } },
             { text: "The ceaseless crashing of waves against a jagged cliff.", regionWeight: { Hoenn: 2, Alola: 1 } },
-            { text: "The silence of nature in all of its glory.", regionWeight: { Sinnoh: 2, Johto: 1 } },
-            { text: "Wind whistling through tall, golden grass.", regionWeight: { Paldea: 2, Kanto: 1 } }
+            { text: "The silence of nature in all of its glory.", regionWeight: { Sinnoh: 2, Kanto: 1 } },
+            { text: "Wind whistling through tall, golden grass.", regionWeight: { Paldea: 2, Johto: 1 } }
         ]
     },
     {
         question: "You are walking alone in the dark and see a flicker of movement in the corner of your eye... what is it?",
         options: [
-            { text: "Something airborne, vanishing into the fog before it's noticed.", regionWeight: { Galar: 2, Unova: 1 } },
-            { text: "A pair of hunting eyes glowing from within a hollow tree.", regionWeight: { Sinnoh: 2, Johto: 1 } },
-            { text: "The shimmer of a colorful wing under a dull streetlamp.", regionWeight: { Kalos: 2, Paldea: 1 } },
+            { text: "Something airborne, vanishing into the fog before it's noticed.", regionWeight: { Galar: 2, Johto: 1 } },
+            { text: "A pair of hunting eyes glowing from within a hollow tree.", regionWeight: { Sinnoh: 2, Paldea: 1 } },
+            { text: "The shimmer of a colorful wing under a dull streetlamp.", regionWeight: { Kalos: 2, Alola: 1 } },
             { text: "Just a trick of the light. There is nothing there.", regionWeight: { Kanto: 2, Hoenn: 1 } }
         ]
     },
     {
         question: "If you were to find a relic from a lost era, what would it most likely be?",
         options: [
-            { text: "A rusted tool that bears the marks of much use.", regionWeight: { Unova: 2, Galar: 1 } },
-            { text: "A sun-bleached stone carved with forgotten runes.", regionWeight: { Alola: 2, Sinnoh: 1 } },
-            { text: "An ornate tapestry depicting a crimson rose.", regionWeight: { Kanto: 2, Johto: 1 } },
-            { text: "A compass that seems to only point toward the sea.", regionWeight: { Hoenn: 2, Kalos: 1 } }
+            { text: "A rusted tool that bears the marks of much use.", regionWeight: { Unova: 2, Paldea: 1 } },
+            { text: "A sun-bleached stone carved with forgotten runes.", regionWeight: { Galar: 2, Kalos: 1 } },
+            { text: "An ornate tapestry depicting a crimson rose.", regionWeight: { Hoenn: 2, Johto: 1 } },
+            { text: "A compass that seems to only point toward the sea.", regionWeight: { Alola: 2, Kanto: 1 } }
         ]
     },
     {
         question: "Feel the air around you. How should it feel against your skin?",
         options: [
-            { text: "Crisp, cold, and smelling of distant pine needles.", regionWeight: { Sinnoh: 2, Galar: 1 } },
-            { text: "Heavy and humid, thick with the scent of rain.", regionWeight: { Hoenn: 2, Alola: 1 } },
-            { text: "Dry and warm, carrying an aroma of herbs and dust.", regionWeight: { Paldea: 2, Unova: 1 } },
-            { text: "Cool and still, like the inside of a stone cathedral.", regionWeight: { Kalos: 2, Johto: 1 } }
+            { text: "Crisp, cold, and smelling of distant pine needles.", regionWeight: { Sinnoh: 2, Unova: 1 } },
+            { text: "Heavy and humid, thick with the scent of rain.", regionWeight: { Hoenn: 2, Galar: 1 } },
+            { text: "Dry and warm, carrying an aroma of herbs and dust.", regionWeight: { Paldea: 2, Kanto: 1 } },
+            { text: "Cool and still, like the inside of a stone cathedral.", regionWeight: { Johto: 2, Kalos: 1 } }
         ]
     },
     {
         question: "What is the one thing you could never leave behind?",
         options: [
             { text: "Ambition. The world taught me strength in looking forward.", regionWeight: { Unova: 2, Paldea: 1 } },
-            { text: "Tradition. I am nothing without my history and roots.", regionWeight: { Johto: 2, Kanto: 1 } },
+            { text: "Tradition. I am nothing without my history and roots.", regionWeight: { Johto: 2, Sinnoh: 1 } },
             { text: "Freedom. I belong to no one and nowhere, no matter where I tread.", regionWeight: { Alola: 2, Hoenn: 1 } },
             { text: "My heart. I follow the beauty in everything.", regionWeight: { Kalos: 2, Galar: 1 } }
         ]
@@ -878,22 +878,18 @@ function showAlternatives() {
     const textElement = document.getElementById("callisto-text");
     const optionsContainer = document.getElementById("options-container");
     
-    // 1. Identify the 'rejected' Pokemon so we don't pick it for the new 5
-    const originalName = currentPokemon.name;
+    // 1. Keep track of the original object so we don't lose its data
+    const originalPokemon = currentPokemon;
 
-    // 2. Create a pool of all OTHER Pokemon with the same nature
-    // (Regardless of region, to ensure we have enough variety)
+    // 2. Filter out the original by name
     let altPool = pokemonData.filter(p => 
         p.nature === finalNature && 
-        p.name !== originalName
+        (Array.isArray(p.name) ? !p.name.includes(originalPokemon.name) : p.name !== originalPokemon.name)
     );
 
-    // 3. Shuffle and pick 5 unique alternatives
-    let alternatives = [];
+    // 3. Shuffle and pick 5 unique alternative OBJECTS
     altPool = altPool.sort(() => 0.5 - Math.random());
-    
-    // We take up to 5 (in case the nature pool is very small)
-    alternatives = altPool.slice(0, 5);
+    let alternatives = altPool.slice(0, 5);
 
     optionsContainer.innerHTML = "";
     
@@ -901,19 +897,26 @@ function showAlternatives() {
         // Create buttons for the 5 NEW options
         alternatives.forEach(alt => {
             const btn = document.createElement("button");
-            // Handle if name is an array or string
+            // If the name in JSON is an array, pick the first one for the label
             const displayName = Array.isArray(alt.name) ? alt.name[0] : alt.name;
             btn.innerText = displayName;
-            btn.onclick = () => rollShiny(displayName);
+            
+            // CRITICAL FIX: Pass the whole 'alt' object, not just the name
+            btn.onclick = () => {
+                currentPokemon = alt; // Update global currentPokemon
+                rollShiny(alt); 
+            };
             optionsContainer.appendChild(btn);
         });
 
-        // 4. Add the "Actually it's okay" option (The 6th Option)
+        // 4. Add the "Actually it's okay" option
         const backBtn = document.createElement("button");
-        backBtn.innerText = `Actually, ${originalName} was right...`;
-        backBtn.style.fontStyle = "italic";
-        backBtn.style.marginTop = "10px"; // Visual separation
-        backBtn.onclick = () => rollShiny(originalName);
+        backBtn.innerText = `Actually, ${originalPokemon.name} was right...`;
+        backBtn.className = "back-button"; // Use a class for easier styling
+        backBtn.onclick = () => {
+            currentPokemon = originalPokemon; // Restore original
+            rollShiny(originalPokemon);
+        };
         optionsContainer.appendChild(backBtn);
     });
 }
