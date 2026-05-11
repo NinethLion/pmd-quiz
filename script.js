@@ -5,7 +5,6 @@ let lockedRegion = "";
 let natureQuestions = [];
 let currentPokemon = null;
 
-// Load the masterlist at the start of your script
 fetch('masterlist.json')
     .then(response => response.json())
     .then(data => {
@@ -648,7 +647,6 @@ function advanceIntro() {
     introIndex++;
     if (introIndex >= introDialogue.length) {
         isIntroPhase = false; 
-        // 1. Pick 10 random questions from the pool when the quiz starts
         natureQuestions = getRandomSubset(pmdQuestionPool, 10);
     }
     renderQuestion();
@@ -699,22 +697,17 @@ typeWriter(quips[lockedRegion], () => {
         const nextBtn = document.createElement("button");
         nextBtn.innerText = "...";
         nextBtn.onclick = () => {
-            optionsContainer.innerHTML = ""; // Clear button
-            
-            // BOX 1: First part of transition
+            optionsContainer.innerHTML = "";
             typeWriter("Now, let us peer deeper into the traits that define you...", () => {
                 const nextBtn2 = document.createElement("button");
                 nextBtn2.innerText = "...";
                 nextBtn2.onclick = () => {
-                    optionsContainer.innerHTML = ""; // Clear button
-                    
-                    // BOX 2: Second part of transition
+                    optionsContainer.innerHTML = ""; 
                     typeWriter("These questions... Might seem familiar to you. ...Ready?", () => {
                         const startNatureBtn = document.createElement("button");
                         startNatureBtn.innerText = "...";
                         startNatureBtn.onclick = () => {
                             isNaturePhase = true;
-                            // Ensure pmdQuestionPool is the name of your 60+ question array
                             natureQuestions = getRandomSubset(pmdQuestionPool, 10); 
                             currentStep = 0;
                             renderQuestion();
@@ -728,10 +721,9 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    // Check for the anomaly (13 is as good as 7!)
-    if (Math.floor(Math.random() * 1) === 0) {
+    if (Math.floor(Math.random() * 500) === 0) {
         isAnomalyActive = true;
-        triggerAnomaly(); // Triggers the screen flip
+        triggerAnomaly();
     }
 }
 
@@ -764,14 +756,11 @@ const natureFlavors = {
 };
 
 function calculateFinalResult() {
-    // Determine the nature with the highest score
     finalNature = Object.keys(natureScores).reduce((a, b) => natureScores[a] > natureScores[b] ? a : b);
     
     const textElement = document.getElementById("callisto-text");
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
-
-    // Step 1: Show Nature Flavor Text one by one
     let flavorLines = natureFlavors[finalNature];
     let lineIndex = 0;
 
@@ -788,7 +777,6 @@ function calculateFinalResult() {
                 optionsContainer.appendChild(nextBtn);
             });
         } else {
-            // Step 2: Proceed to the Pokémon Reveal
             startPokemonReveal();
         }
     }
@@ -800,6 +788,10 @@ function startPokemonReveal() {
     if (isAnomalyActive) {
         const anomalyPool = pokemonData.anomaly_pool || [];
         const anomaly = anomalyPool[Math.floor(Math.random() * anomalyPool.length)];
+		if (!anomaly) {
+            console.error("Anomaly pool is empty or missing!");
+            return;
+        }
         currentPokemon = anomaly;
         displayFinalReveal(anomaly.name, "anomaly");
         return;
@@ -815,40 +807,25 @@ function startPokemonReveal() {
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
 
-    // 1. Unified Regional Variant Logic (Handles Meowth AND everyone else)
-    if (matchedPokemon.variant_data.regional && rollRegional) {
+	if (matchedPokemon.variant_data.regional && rollRegional) {
         const regionalData = matchedPokemon.variant_data.regional;
-        let chosenName;
-
-        if (Array.isArray(regionalData)) {
-            // It's a list (like Meowth), pick one at random
-            chosenName = regionalData[Math.floor(Math.random() * regionalData.length)];
-        } else {
-            // It's a single string (like Vulpix), use it directly
-            chosenName = regionalData;
-        }
+        let chosenName = Array.isArray(regionalData) 
+            ? regionalData[Math.floor(Math.random() * regionalData.length)] 
+            : regionalData;
 
         currentPokemon = { name: chosenName }; 
         displayFinalReveal(chosenName, "variant");
-    } 
-    // 2. Handle Paradox Forms
-    else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
+    }
+	else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
         const paradoxData = matchedPokemon.variant_data.paradox_name;
-        let chosenParadox;
-
-        if (Array.isArray(paradoxData)) {
-            // Pick randomly between Iron Moth and Slither Wing
-            chosenParadox = paradoxData[Math.floor(Math.random() * paradoxData.length)];
-        } else {
-            // Use the single name string
-            chosenParadox = paradoxData;
-        }
+        let chosenParadox = Array.isArray(paradoxData) 
+            ? paradoxData[Math.floor(Math.random() * paradoxData.length)] 
+            : paradoxData;
 
         currentPokemon = { name: chosenParadox }; 
         displayFinalReveal(chosenParadox, "weak_paradox");
     }
-    // 3. Standard Manifestation
-    else {
+	else {
         currentPokemon = matchedPokemon; 
         displayFinalReveal(matchedPokemon.name, "standard");
     }
@@ -872,7 +849,6 @@ function displayFinalReveal(pokemonName, resultType) {
             optionsContainer.innerHTML = "";
             typeWriter(`${pokemonName}.`, () => {
                 
-                // Add unique flavor text based on result type
                 let flavorText = "";
                 if (resultType === "anomaly") {
                     flavorText = "<br><br>An Ultra Beast? A Paradox from a distant edge of time? You shouldn't exist here... yet here you are.";
@@ -890,7 +866,6 @@ function displayFinalReveal(pokemonName, resultType) {
                     textElement.appendChild(flavorSpan);
                 }
 
-                // Satisfaction Buttons
                 const yesBtn = document.createElement("button");
                 yesBtn.innerText = "I am satisfied.";
                 yesBtn.onclick = () => rollShiny(pokemonName);
@@ -912,43 +887,35 @@ function showAlternatives() {
     const textElement = document.getElementById("callisto-text");
     const optionsContainer = document.getElementById("options-container");
     
-    // 1. Keep track of the original object so we don't lose its data
     const originalPokemon = currentPokemon;
 
-    // 2. Filter out the original by name
     let altPool = pokemonData.filter(p => 
         p.nature === finalNature && 
         (Array.isArray(p.name) ? !p.name.includes(originalPokemon.name) : p.name !== originalPokemon.name)
     );
 
-    // 3. Shuffle and pick 5 unique alternative OBJECTS
     altPool = altPool.sort(() => 0.5 - Math.random());
     let alternatives = altPool.slice(0, 5);
 
     optionsContainer.innerHTML = "";
     
     typeWriter("Are you saying I read wrong...? Hm. Maybe one of these will satisfy you, then.", () => {
-        // Create buttons for the 5 NEW options
         alternatives.forEach(alt => {
             const btn = document.createElement("button");
-            // If the name in JSON is an array, pick the first one for the label
             const displayName = Array.isArray(alt.name) ? alt.name[0] : alt.name;
             btn.innerText = displayName;
-            
-            // CRITICAL FIX: Pass the whole 'alt' object, not just the name
             btn.onclick = () => {
-                currentPokemon = alt; // Update global currentPokemon
+                currentPokemon = alt;
                 rollShiny(alt); 
             };
             optionsContainer.appendChild(btn);
         });
 
-        // 4. Add the "Actually it's okay" option
         const backBtn = document.createElement("button");
         backBtn.innerText = `Actually, ${originalPokemon.name} was right...`;
-        backBtn.className = "back-button"; // Use a class for easier styling
+        backBtn.className = "back-button"; 
         backBtn.onclick = () => {
-            currentPokemon = originalPokemon; // Restore original
+            currentPokemon = originalPokemon; 
             rollShiny(originalPokemon);
         };
         optionsContainer.appendChild(backBtn);
@@ -976,7 +943,7 @@ function rollShiny(pokemon) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
-    const isShiny = Math.floor(Math.random() * 500) === 13;
+    const isShiny = Math.floor(Math.random() * 1) === 1;
 	logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
     if (isShiny) {
@@ -1006,10 +973,10 @@ function triggerAnomaly() {
 }
 
 function getRandomSubset(array, size) {
-    let shuffled = [...array]; // Copy the array so we don't destroy the original pool
+    let shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; // Swap elements
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled.slice(0, size);
 }
