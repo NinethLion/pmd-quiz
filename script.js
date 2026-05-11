@@ -723,7 +723,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 1) === 0) {
+    if (Math.floor(Math.random() * 500) === 0) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
@@ -839,34 +839,41 @@ function displayFinalReveal(pokemonName, resultType) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
 
-    // 1. SET INITIAL TEASER
+    // 1. EVERYONE sees this line first
     let teaser = `...Yes. You most certainly possess a ${finalNature} heart. The Pokemon you are deep down is...`;
     
-    if (resultType === "anomaly") {
-        teaser = "Something from beyond the laws of time and space. You shouldn't exist here... yet here you are.";
-    }
-
-    // 2. START THE FIRST TYPEWRITER PHASE
     typeWriter(teaser, () => {
         const nextBtn = document.createElement("button");
         nextBtn.innerText = "...";
         nextBtn.onclick = () => {
             optionsContainer.innerHTML = "";
 
-            // 3. ANOMALY SPECIAL STEP: Show JSON flavor text
+            // 2. BRANCHING LOGIC
             if (resultType === "anomaly") {
-                const anomalyFlavor = currentPokemon.flavor || "A ripple in the fabric of reality.";
-                typeWriter(anomalyFlavor, () => {
-                    const finalNextBtn = document.createElement("button");
-                    finalNextBtn.innerText = "...";
-                    finalNextBtn.onclick = () => {
+                // ANOMALY BOX 2: The Glitch Warning
+                const glitchText = "Something from beyond the laws of time and space. You shouldn't exist here... yet here you are.";
+                typeWriter(glitchText, () => {
+                    const nextBtn2 = document.createElement("button");
+                    nextBtn2.innerText = "...";
+                    nextBtn2.onclick = () => {
                         optionsContainer.innerHTML = "";
-                        finishReveal(pokemonName, resultType);
+                        
+                        // ANOMALY BOX 3: The JSON Flavor Text
+                        const anomalyFlavor = currentPokemon.flavor || "A ripple in the fabric of reality.";
+                        typeWriter(anomalyFlavor, () => {
+                            const nextBtn3 = document.createElement("button");
+                            nextBtn3.innerText = "...";
+                            nextBtn3.onclick = () => {
+                                optionsContainer.innerHTML = "";
+                                finishReveal(pokemonName, resultType); // Finally show the name
+                            };
+                            optionsContainer.appendChild(nextBtn3);
+                        });
                     };
-                    optionsContainer.appendChild(finalNextBtn);
+                    optionsContainer.appendChild(nextBtn2);
                 });
             } else {
-                // Standard flow skips the extra box
+                // STANDARD FLOW: Skip straight to the name
                 finishReveal(pokemonName, resultType);
             }
         };
