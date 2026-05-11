@@ -935,6 +935,7 @@ function logToGoogleSheets(pokemonName, nature) {
     const formData = new FormData();
     formData.append("entry.2113001359", pokemonName);
     formData.append("entry.1480260884", nature);
+	formData.append("entry.1083012498", isShinyStatus? "Yes" : "No");
 
     fetch(baseURL, {
         method: "POST",
@@ -949,7 +950,7 @@ function rollShiny(pokemon) {
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
     const isShiny = Math.floor(Math.random() * 500) === 0;
-	logToGoogleSheets(pokemonName, finalNature);
+	logToGoogleSheets(pokemonName, finalNature, isShiny);
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
     if (isShiny) {
         finalMessage = `A brilliant flash of light occurs... You have manifested as a shiny ${pokemonName}!`;
