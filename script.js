@@ -723,7 +723,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 1) === 0) {
+    if (Math.floor(Math.random() * 500) === 13) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
@@ -788,7 +788,6 @@ function calculateFinalResult() {
 
 function startPokemonReveal() {
     if (isAnomalyActive) {
-        // Path matches your JSON: settings -> anomaly
         const anomalyPool = (pokemonData.settings && pokemonData.settings.anomaly) 
             ? pokemonData.settings.anomaly 
             : [];
@@ -814,8 +813,6 @@ function startPokemonReveal() {
 
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
-
-    // Standard Regional/Paradox logic...
     if (matchedPokemon.variant_data.regional && rollRegional) {
         const regionalData = matchedPokemon.variant_data.regional;
         const chosenName = Array.isArray(regionalData) ? regionalData[Math.floor(Math.random() * regionalData.length)] : regionalData;
@@ -839,7 +836,6 @@ function displayFinalReveal(pokemonName, resultType) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
 
-    // 1. EVERYONE sees this line first
     let teaser = `...Yes. You most certainly possess a ${finalNature} heart. The Pokemon you are deep down is...`;
     
     typeWriter(teaser, () => {
@@ -848,9 +844,7 @@ function displayFinalReveal(pokemonName, resultType) {
         nextBtn.onclick = () => {
             optionsContainer.innerHTML = "";
 
-            // 2. BRANCHING LOGIC
             if (resultType === "anomaly") {
-                // ANOMALY BOX 2: The Glitch Warning
                 const glitchText = "Something from beyond the laws of time and space. You shouldn't exist here... yet here you are.";
                 typeWriter(glitchText, () => {
                     const nextBtn2 = document.createElement("button");
@@ -858,7 +852,6 @@ function displayFinalReveal(pokemonName, resultType) {
                     nextBtn2.onclick = () => {
                         optionsContainer.innerHTML = "";
                         
-                        // ANOMALY BOX 3: The JSON Flavor Text
                         const anomalyFlavor = currentPokemon.flavor || "A ripple in the fabric of reality.";
                         typeWriter(anomalyFlavor, () => {
                             const nextBtn3 = document.createElement("button");
@@ -873,7 +866,6 @@ function displayFinalReveal(pokemonName, resultType) {
                     optionsContainer.appendChild(nextBtn2);
                 });
             } else {
-                // STANDARD FLOW: Skip straight to the name
                 finishReveal(pokemonName, resultType);
             }
         };
@@ -881,15 +873,12 @@ function displayFinalReveal(pokemonName, resultType) {
     });
 }
 
-// 4. HELPER FUNCTION: Handles the name reveal and final buttons
 function finishReveal(pokemonName, resultType) {
     const textElement = document.getElementById("callisto-text");
     const optionsContainer = document.getElementById("options-container");
 
     typeWriter(`${pokemonName}.`, () => {
         let subFlavorText = "";
-        
-        // Add italicized flavor labels for variants and paradoxes
         if (resultType === "variant") {
             subFlavorText = "<br><br>A Regional Variant. Your form has adapted to a different horizon, carrying the echoes of another land.";
         } else if (resultType === "weak_paradox") {
@@ -904,7 +893,6 @@ function finishReveal(pokemonName, resultType) {
             textElement.appendChild(flavorSpan);
         }
 
-        // Final Action Buttons
         const yesBtn = document.createElement("button");
         yesBtn.innerText = "I am satisfied.";
         yesBtn.onclick = () => rollShiny(pokemonName);
