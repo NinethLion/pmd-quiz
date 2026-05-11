@@ -797,14 +797,19 @@ function calculateFinalResult() {
 }
 
 function startPokemonReveal() {
+	logToGoogleSheets(currentPokemon ? currentPokemon.name : "Anomaly", finalNature);
     if (isAnomalyActive) {
         const anomaly = pokemonData.anomaly_pool[Math.floor(Math.random() * pokemonData.anomaly_pool.length)];
         displayFinalReveal(anomaly.name, "anomaly");
         return;
     }
 
-	let matched = getFinalPokemon(finalNature, lockedRegion);
-    currentPokemon = matchedPokemon; 
+	let matchedPokemon = getFinalPokemon(finalNature, lockedRegion);
+    currentPokemon = matchedPokemon;
+	if (!matchedPokemon) {
+        console.error("No Pokemon found for this combo!");
+        return;
+    }
     // Space-Time Distortion Rolls
     const rollRegional = Math.random() < (1 / 50);
     const rollParadox = Math.random() < (1 / 250);
@@ -812,7 +817,7 @@ function startPokemonReveal() {
     if (matchedPokemon.name === "Meowth" && rollRegional) {
         const variants = ["Alolan Meowth", "Galarian Meowth"];
         displayFinalReveal(variants[Math.floor(Math.random() * variants.length)], "variant");
-    } else if (matchedPokemon.variant_data.has_regional && rollRegional) {
+    } else if (matchedPokemon.variant_data.regional) {
         displayFinalReveal(matchedPokemon.variant_data.regional_name, "variant");
     } else if (matchedPokemon.variant_data.has_paradox && rollParadox) {
         displayFinalReveal(matchedPokemon.variant_data.paradox_name, "weak_paradox");
@@ -922,6 +927,24 @@ function showAlternatives() {
     });
 }
 
+function logToGoogleSheets(pokemonName, nature) {
+    const formID = "1FAIpQLSdgZo4Ix999Jc581n06cjKc_DDcs5kBQCuPEeZrto9c4zWU5A"; 
+    const pokemonEntryID = "entry.2113001359"; 
+    const natureEntryID = "entry.1480260884";
+    const baseURL = `https://docs.google.com/forms/u/0/d/e/$1FAIpQLSdgZo4Ix999Jc581n06cjKc_DDcs5kBQCuPEeZrto9c4zWU5A/formResponse`;
+    const formData = new FormData();
+    formData.append(pokemonEntryID, pokemonName);
+    formData.append(natureEntryID, nature);
+
+    fetch(baseURL, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+    })
+    .then(() => console.log("Enlightenment logged to the stars."))
+    .catch((err) => console.error("Logging failed:", err));
+}
+
 function rollShiny(pokemonName) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
@@ -937,6 +960,7 @@ function rollShiny(pokemonName) {
 
     typeWriter(finalMessage);
 }
+
 
 function getFinalPokemon(nature, region) {
     // Returns the 1-3 Pokemon mapped to that nature/region combo
