@@ -729,7 +729,7 @@ typeWriter(quips[lockedRegion], () => {
     });
 
     // Check for the anomaly (13 is as good as 7!)
-    if (Math.floor(Math.random() * 500) === 13) {
+    if (Math.floor(Math.random() * 1) === 0) {
         isAnomalyActive = true;
         triggerAnomaly(); // Triggers the screen flip
     }
@@ -976,7 +976,7 @@ function rollShiny(pokemon) {
     const optionsContainer = document.getElementById("options-container");
     optionsContainer.innerHTML = "";
     const pokemonName = (typeof pokemon === 'object') ? pokemon.name : pokemon;
-    const isShiny = Math.floor(Math.random() * 1) === 0;
+    const isShiny = Math.floor(Math.random() * 500) === 13;
 	logToGoogleSheets(pokemonName, finalNature, isShiny, lockedRegion);
     let finalMessage = `The resonance is complete. You have manifested as ${pokemonName}.`;
     if (isShiny) {
