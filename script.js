@@ -24,7 +24,7 @@ const regionQuestions = [
         question: "Tell me... In your ideal home, when you close your eyes, what do you hear?",
         options: [
             { text: "The hustle and bustle of a city that never sleeps.", regionWeight: { Unova: 2, Kalos: 1 } },
-            { text: "The ceaseless crashing of waves against a jagged cliff.", regionWeight: { Hoenn: 2, Alola: 1 } },
+            { text: "The ceaseless crashing of waves against a jagged cliff.", regionWeight: { Alola: 2, Hoenn: 1 } },
             { text: "The silence of nature in all of its glory.", regionWeight: { Sinnoh: 2, Kanto: 1 } },
             { text: "Wind whistling through tall, golden grass.", regionWeight: { Paldea: 2, Johto: 1 } }
         ]
@@ -52,17 +52,17 @@ const regionQuestions = [
         options: [
             { text: "Crisp, cold, and smelling of distant pine needles.", regionWeight: { Sinnoh: 2, Unova: 1 } },
             { text: "Heavy and humid, thick with the scent of rain.", regionWeight: { Hoenn: 2, Galar: 1 } },
-            { text: "Dry and warm, carrying an aroma of herbs and dust.", regionWeight: { Paldea: 2, Kanto: 1 } },
+            { text: "Dry and warm, carrying an aroma of herbs and dust.", regionWeight: { Kanto: 2, Paldea: 1 } },
             { text: "Cool and still, like the inside of a stone cathedral.", regionWeight: { Johto: 2, Kalos: 1 } }
         ]
     },
     {
         question: "What is the one thing you could never leave behind?",
         options: [
-            { text: "Ambition. The world taught me strength in looking forward.", regionWeight: { Unova: 2, Paldea: 1 } },
+            { text: "Ambition. The world taught me strength in looking forward.", regionWeight: { Unova: 2, Alola: 1 } },
             { text: "Tradition. I am nothing without my history and roots.", regionWeight: { Johto: 2, Sinnoh: 1 } },
-            { text: "Freedom. I belong to no one and nowhere, no matter where I tread.", regionWeight: { Alola: 2, Hoenn: 1 } },
-            { text: "My heart. I follow the beauty in everything.", regionWeight: { Kalos: 2, Galar: 1 } }
+            { text: "Freedom. I belong to no one and nowhere, no matter where I tread.", regionWeight: { Paldea: 2, Hoenn: 1 } },
+            { text: "My heart. I follow the beauty in everything.", regionWeight: { Kalos: 2, Kanto: 1 } }
         ]
     }
 ];
