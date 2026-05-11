@@ -1,7 +1,7 @@
 {
   "settings": {
     "quiz_title": "Quiz of Enlightenment",
-    "anomalies": [
+    "anomaly": [
   { "name": "Raging Bolt", "pools": ["Johto"], "flavor": "A thunderous echo of a prehistoric storm." },
   { "name": "Gouging Fire", "pools": ["Johto"], "flavor": "A blazing behemoth from a forgotten era." },
   { "name": "Walking Wake", "pools": ["Kanto"], "flavor": "A primal predator that walks upon the waves." },
