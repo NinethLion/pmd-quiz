@@ -722,12 +722,12 @@ typeWriter(quips[lockedRegion], () => {
                 const nextBtn2 = document.createElement("button");
                 nextBtn2.innerText = "...";
                 nextBtn2.onclick = () => {
+					if (introIndex === 0) { bgmNormal.play().catch(e => console.log("Audio play deferred")); }
                     optionsContainer.innerHTML = ""; 
                     typeWriter("These questions... Might seem familiar to you. ...Ready?", () => {
                         const startNatureBtn = document.createElement("button");
                         startNatureBtn.innerText = "...";
                         startNatureBtn.onclick = () => {
-							bgmNormal.play();
                             isNaturePhase = true;
                             natureQuestions = getRandomSubset(pmdQuestionPool, 10); 
                             currentStep = 0;
@@ -742,7 +742,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 1) === 0) {
+    if (Math.floor(Math.random() * 500) === 13) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
@@ -1026,6 +1026,16 @@ function getRandomSubset(array, size) {
         [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     return shuffled.slice(0, size);
+}
+
+function switchMusic(toAnomaly) {
+    const oldTrack = toAnomaly ? bgmNormal : bgmAnomaly;
+    const newTrack = toAnomaly ? bgmAnomaly : bgmNormal;
+    const currentTime = oldTrack.currentTime;
+    oldTrack.pause();
+    newTrack.currentTime = currentTime;
+    newTrack.play().catch(e => console.error("Music swap failed:", e)); 
+    activeBGM = newTrack;
 }
 
 window.onload = renderQuestion;
