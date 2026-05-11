@@ -1067,7 +1067,9 @@ function showResultsPage(data) {
 window.onload = () => {
     const savedData = localStorage.getItem("enlightenment_result");
     
-if (data.isAnomaly) {
+	if (savedData) {
+        const data = JSON.parse(savedData);
+		if (data.isAnomaly) {
             document.body.style.filter = "invert(1) hue-rotate(180deg)";
             bgmAnomaly.play().catch(() => {
                 console.log("Autoplay blocked. Music will start on next click.");
@@ -1078,8 +1080,7 @@ if (data.isAnomaly) {
             });
         }
         showResultsPage(data);
-    } 
-	else {
+    } else {
         renderQuestion();
     }
 	document.body.addEventListener('click', () => {
