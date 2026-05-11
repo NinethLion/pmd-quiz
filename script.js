@@ -727,6 +727,7 @@ typeWriter(quips[lockedRegion], () => {
                         const startNatureBtn = document.createElement("button");
                         startNatureBtn.innerText = "...";
                         startNatureBtn.onclick = () => {
+							bgmNormal.play();
                             isNaturePhase = true;
                             natureQuestions = getRandomSubset(pmdQuestionPool, 10); 
                             currentStep = 0;
@@ -741,7 +742,7 @@ typeWriter(quips[lockedRegion], () => {
         optionsContainer.appendChild(nextBtn);
     });
 
-    if (Math.floor(Math.random() * 500) === 13) {
+    if (Math.floor(Math.random() * 1) === 0) {
         isAnomalyActive = true;
         triggerAnomaly();
     }
